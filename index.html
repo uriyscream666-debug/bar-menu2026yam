@@ -2,165 +2,165 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Барная карта 2026 | Трактир / Шахерезада</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #111111;
-      --bg-card: #1a1a1a;
-      --text-primary: #f5f5f5;
-      --text-secondary: #b0b0b0;
-      --accent: #c9a962;
-      --accent-hover: #b8984d;
-      --border: #2a2a2a;
-      --success: #4caf50;
-      --error: #f44336;
-      --radius: 12px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.4);
+      --bg-primary: #0a0a0a; --bg-secondary: #111111; --bg-card: #1a1a1a;
+      --text-primary: #f5f5f5; --text-secondary: #b0b0b0; --accent: #c9a962;
+      --accent-hover: #b8984d; --border: #2a2a2a; --success: #4caf50; 
+      --error: #f44336; --radius: 12px; --shadow: 0 8px 32px rgba(0,0,0,0.4);
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
     
-    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 3rem 1rem 2rem; text-align: center; border-bottom: 2px solid var(--accent); }
-    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem; letter-spacing: 2px; }
-    .hero p { color: var(--text-secondary); font-size: 0.95rem; }
-    .legend { max-width: 800px; margin: 1rem auto; padding: 1rem; background: rgba(201,169,98,0.1); border-radius: var(--radius); font-style: italic; color: var(--text-secondary); font-size: 0.9rem; }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 2.5rem 1rem 2rem; text-align: center; border-bottom: 2px solid var(--accent); }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--accent); margin-bottom: 0.5rem; letter-spacing: 1px; }
+    .hero p { color: var(--text-secondary); font-size: 0.9rem; }
+    .legend { max-width: 800px; margin: 1rem auto 0; padding: 1rem; background: rgba(201,169,98,0.1); border-radius: var(--radius); font-style: italic; color: var(--text-secondary); font-size: 0.85rem; }
     
-    .golden-rules { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); color: #000; padding: 1.5rem 1rem; text-align: center; }
-    .golden-rules h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
-    .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto; }
-    .rule-item { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: var(--radius); font-weight: 500; font-size: 0.9rem; }
-    .rule-number { font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 0.3rem; }
+    .golden-rules { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); color: #000; padding: 1.2rem 1rem; text-align: center; }
+    .golden-rules h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-bottom: 0.8rem; font-weight: 600; }
+    .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; max-width: 900px; margin: 0 auto; }
+    .rule-item { background: rgba(255,255,255,0.15); padding: 0.8rem; border-radius: var(--radius); font-weight: 500; font-size: 0.85rem; }
+    .rule-number { font-weight: 700; font-size: 1.1rem; display: block; margin-bottom: 0.2rem; }
     
     .nav-container { position: sticky; top: 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border); z-index: 100; box-shadow: var(--shadow); }
-    .nav-tabs { display: flex; gap: 0.5rem; overflow-x: auto; padding: 1rem; scrollbar-width: thin; }
-    .tab-btn { flex: 0 0 auto; padding: 0.7rem 1.2rem; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 50px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; white-space: nowrap; }
-    .tab-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .nav-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding: 0.8rem; scrollbar-width: none; }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .tab-btn { flex: 0 0 auto; padding: 0.6rem 1rem; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 50px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 500; transition: 0.2s; white-space: nowrap; }
     .tab-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 600; }
     
-    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; text-align: center; position: relative; padding-bottom: 0.5rem; }
-    .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: var(--accent); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 4vw, 1.8rem); color: var(--accent); margin-bottom: 1.2rem; text-align: center; position: relative; padding-bottom: 0.5rem; }
+    .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 2px; background: var(--accent); }
     
-    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-    .menu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
-    .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--accent); }
-    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; gap: 1rem; }
-    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
-    .card-volume { background: var(--accent); color: #000; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
-    .card-ingredients { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.8rem; line-height: 1.5; }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
+    .menu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; transition: 0.2s; cursor: pointer; position: relative; }
+    .menu-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--accent); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; gap: 0.8rem; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--text-primary); }
+    .card-volume { background: var(--accent); color: #000; padding: 0.2rem 0.5rem; border-radius: 15px; font-size: 0.7rem; font-weight: 600; white-space: nowrap; }
+    .card-ingredients { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.6rem; line-height: 1.4; }
     
-    .allergen-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
-    .allergen-tag { background: rgba(244, 67, 54, 0.15); color: #ff6b6b; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 500; border: 1px solid rgba(244, 67, 54, 0.3); }
+    .allergen-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.6rem; }
+    .allergen-tag { background: rgba(244, 67, 54, 0.15); color: #ff6b6b; padding: 0.2rem 0.5rem; border-radius: 5px; font-size: 0.7rem; font-weight: 500; border: 1px solid rgba(244, 67, 54, 0.3); }
     .allergen-tag.safe { background: rgba(76, 175, 80, 0.15); color: #66bb6a; border-color: rgba(76, 175, 80, 0.3); }
     
-    .script-box { background: rgba(201, 169, 98, 0.1); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.8rem; }
-    .script-label { color: var(--accent); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; display: block; }
+    .script-box { background: rgba(201, 169, 98, 0.1); border-left: 3px solid var(--accent); padding: 0.6rem 0.8rem; border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--text-secondary); font-size: 0.8rem; margin-top: 0.6rem; }
+    .script-label { color: var(--accent); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.2rem; display: block; }
     
-    .serving-info { margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-secondary); }
-    .serving-label { font-weight: 600; color: var(--accent); }
-    .price { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border); text-align: right; }
-    .price-value { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+    .price { margin-top: 0.8rem; padding-top: 0.6rem; border-top: 1px solid var(--border); text-align: right; }
+    .price-value { font-size: 1.15rem; font-weight: 700; color: var(--accent); }
     
     /* Modal */
-    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 1000; display: none; justify-content: center; align-items: center; padding: 1rem; }
-    .modal-overlay.active { display: flex; }
-    .modal { background: var(--bg-card); border: 2px solid var(--accent); border-radius: var(--radius); max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 2rem; position: relative; }
-    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.3s; }
+    .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 1000; display: none; justify-content: center; align-items: center; padding: 1rem; opacity: 0; transition: opacity 0.3s; }
+    .modal-overlay.active { display: flex; opacity: 1; }
+    .modal { background: var(--bg-card); border: 2px solid var(--accent); border-radius: var(--radius); max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 1.5rem; position: relative; transform: scale(0.95); transition: transform 0.3s; }
+    .modal-overlay.active .modal { transform: scale(1); }
+    .modal-close { position: absolute; top: 0.8rem; right: 0.8rem; background: none; border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.2s; }
     .modal-close:hover { background: var(--accent); color: #000; }
-    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--accent); margin-bottom: 1rem; }
-    .modal-section { margin-bottom: 1.5rem; }
-    .modal-label { font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-    .modal-content { color: var(--text-secondary); line-height: 1.6; }
-    .ingredients-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
-    .ingredient-item { background: rgba(201,169,98,0.2); padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; border: 1px solid var(--accent); }
+    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--accent); margin-bottom: 0.8rem; padding-right: 2rem; }
+    .modal-section { margin-bottom: 1.2rem; }
+    .modal-label { font-weight: 600; color: var(--accent); margin-bottom: 0.4rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .modal-content { color: var(--text-secondary); line-height: 1.5; font-size: 0.9rem; }
+    .ingredients-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+    .ingredient-item { background: rgba(201,169,98,0.2); padding: 0.3rem 0.6rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid var(--accent); }
     
-    /* Game */
-    .game-container { max-width: 800px; margin: 0 auto; text-align: center; }
-    .game-info { background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 1.5rem; border: 2px solid var(--accent); }
-    .game-order { font-size: 1.3rem; color: var(--accent); margin-bottom: 0.5rem; font-family: 'Cormorant Garamond', serif; }
-    .game-target { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem; }
-    .game-canvas { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); height: 500px; position: relative; overflow: hidden; margin-bottom: 1rem; }
-    .game-item { position: absolute; font-size: 2rem; cursor: pointer; user-select: none; transition: transform 0.1s; }
-    .game-item:active { transform: scale(1.2); }
-    .game-basket { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 100px; height: 100px; background: rgba(201,169,98,0.3); border: 3px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-    .game-stats { display: flex; justify-content: space-around; padding: 1rem; background: var(--bg-card); border-radius: var(--radius); }
-    .stat { text-align: center; }
-    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
-    .stat-label { font-size: 0.85rem; color: var(--text-secondary); }
-    .game-over { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(244,67,54,0.9); padding: 2rem; border-radius: var(--radius); text-align: center; display: none; }
-    .game-over.active { display: block; }
-    .game-over h3 { font-size: 2rem; margin-bottom: 1rem; }
-    .btn-start, .btn-restart { background: var(--accent); color: #000; border: none; padding: 1rem 2rem; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 600; cursor: pointer; margin-top: 1rem; font-size: 1rem; }
-    .btn-start:hover, .btn-restart:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    /* GAME STYLES */
+    .game-wrapper { max-width: 800px; margin: 0 auto; }
+    .game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; background: var(--bg-card); padding: 1rem; border-radius: var(--radius); border: 1px solid var(--border); gap: 1rem; flex-wrap: wrap; }
+    .game-stat { text-align: center; flex: 1; min-width: 80px; }
+    .game-stat-value { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+    .game-stat-label { font-size: 0.75rem; color: var(--text-secondary); }
     
-    /* Quiz */
-    .quiz-container { max-width: 800px; margin: 0 auto; }
-    .quiz-question { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
-    .question-number { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .question-text { font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary); }
-    .quiz-options { display: grid; gap: 0.8rem; }
-    .quiz-option { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); padding: 1rem; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
-    .quiz-option:hover:not(.answered) { border-color: var(--accent); background: rgba(201, 169, 98, 0.1); }
-    .quiz-option.correct { background: rgba(76, 175, 80, 0.2); border-color: var(--success); color: #81c784; }
-    .quiz-option.wrong { background: rgba(244, 67, 54, 0.2); border-color: var(--error); color: #e57373; }
-    .quiz-option.answered { cursor: not-allowed; opacity: 0.8; }
-    .explanation { margin-top: 1rem; padding: 1rem; background: rgba(201, 169, 98, 0.1); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; font-size: 0.9rem; color: var(--text-secondary); }
+    .game-area { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); height: 500px; position: relative; overflow: hidden; touch-action: none; user-select: none; }
+    .game-order-display { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.8); padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; color: var(--accent); font-size: 1rem; z-index: 10; text-align: center; border: 1px solid var(--accent); }
+    .game-progress { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 0.5rem; z-index: 10; }
+    .progress-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--border); transition: 0.3s; }
+    .progress-dot.filled { background: var(--success); box-shadow: 0 0 10px var(--success); }
     
-    .quiz-result { text-align: center; padding: 2rem; background: var(--bg-card); border-radius: var(--radius); margin-top: 2rem; border: 2px solid var(--accent); }
-    .result-score { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--accent); margin: 1rem 0; }
-    .result-message { font-size: 1.2rem; margin-bottom: 1rem; }
+    .falling-emoji { position: absolute; font-size: 2.2rem; cursor: pointer; user-select: none; transition: transform 0.1s; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); z-index: 5; }
+    .falling-emoji:active { transform: scale(0.9); }
+    .falling-emoji.correct-caught { animation: correctPop 0.4s forwards; }
+    .falling-emoji.wrong-caught { animation: wrongShake 0.4s forwards; }
+    
+    @keyframes correctPop {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.8; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+    @keyframes wrongShake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+    
+    .game-controls { text-align: center; margin-top: 1rem; }
+    .btn-game { background: var(--accent); color: #000; border: none; padding: 0.8rem 2rem; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 600; cursor: pointer; font-size: 1rem; transition: 0.2s; }
+    .btn-game:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    .btn-game:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    
+    .game-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.9); display: none; flex-direction: column; align-items: center; justify-content: center; z-index: 20; padding: 2rem; text-align: center; }
+    .game-overlay.active { display: flex; }
+    .game-overlay h3 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--accent); margin-bottom: 0.5rem; }
+    .game-overlay p { color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 400px; }
+    .game-overlay .score-display { font-size: 3rem; font-weight: 700; color: var(--accent); margin: 1rem 0; }
+    
+    .lives-display { display: flex; gap: 0.3rem; justify-content: center; }
+    .life { font-size: 1.5rem; transition: 0.3s; }
+    .life.lost { opacity: 0.3; filter: grayscale(1); }
     
     /* Allergens & Resources */
     .allergen-table { background: var(--bg-card); border-radius: var(--radius); overflow: hidden; margin-bottom: 2rem; }
-    .allergen-row { display: grid; grid-template-columns: 1fr 2fr; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); gap: 1rem; }
+    .allergen-row { display: grid; grid-template-columns: 1fr 2fr; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); gap: 0.8rem; font-size: 0.9rem; }
     .allergen-row:last-child { border-bottom: none; }
     .allergen-name { font-weight: 600; color: var(--accent); }
-    .allergen-locations { color: var(--text-secondary); font-size: 0.9rem; }
+    .allergen-locations { color: var(--text-secondary); }
     
-    .story-card { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; }
-    .story-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; }
-    .story-list { list-style: none; padding-left: 0; }
-    .story-list li { padding: 0.8rem 0; padding-left: 2rem; position: relative; color: var(--text-secondary); line-height: 1.6; }
-    .story-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-    .highlight-phrase { background: rgba(201, 169, 98, 0.15); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--accent); font-weight: 500; }
-    
-    .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .resource-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: 0.3s; }
-    .resource-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .resource-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--accent); margin-bottom: 0.5rem; }
-    .resource-link { color: var(--text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+    .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .resource-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem; transition: 0.2s; }
+    .resource-card:hover { border-color: var(--accent); }
+    .resource-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .resource-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
     .resource-link:hover { color: var(--accent); }
     
     .hidden { display: none !important; }
     
     @media (max-width: 768px) {
-      .hero h1 { font-size: 1.8rem; }
-      .section-title { font-size: 1.5rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .section-title { font-size: 1.4rem; }
       .menu-grid { grid-template-columns: 1fr; }
-      .allergen-row { grid-template-columns: 1fr; gap: 0.5rem; }
-      .game-canvas { height: 400px; }
+      .allergen-row { grid-template-columns: 1fr; gap: 0.3rem; }
+      .game-area { height: 400px; }
+      .falling-emoji { font-size: 1.8rem; }
+    }
+    @media (max-width: 480px) {
+      .game-area { height: 350px; }
+      .game-header { padding: 0.8rem; }
+      .game-stat-value { font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
   <header class="hero">
-    <h1>✦ БАРНАЯ КАРТА 2026 ✦</h1>
+    <h1>✦ БАРНАЯ КАРТА 2026 </h1>
     <p>Трактир / Шахерезада • Летнее меню</p>
     <div class="legend">
-      <strong>Легенда:</strong> Два ресторана – одна душа. В «Трактире» вас ждут русские традиции и щи с пирогами, а в «Шахерезаде» – восточные сказки и ароматный плов. Но бар у нас общий! Наши бармены – настоящие алхимики, которые смешивают напитки так искусно, что каждый глоток становится частью истории. Осторожно: ошибки в рецепте могут стоить гостю жизни... шутка! Но лучше не рисковать 😉
+      Два ресторана – одна барная душа. В «Трактире» русские традиции, в «Шахерезаде» – восточные сказки. Но напитки готовят одни мастера. Осторожно: ошибка в ингредиенте может стоить гостю настроения (и вам – премии). Удачи!
     </div>
   </header>
 
   <section class="golden-rules">
-    <h3>🎯 3 золотых правила продажи</h3>
+    <h3>🎯 3 золотых правила</h3>
     <div class="rules-grid">
-      <div class="rule-item"><span class="rule-number">1</span>Знай, что внутри – из этого пособия</div>
-      <div class="rule-item"><span class="rule-number">2</span>Аллергены – если не уверен: «Уточню у бармена, одну минуту»</div>
-      <div class="rule-item"><span class="rule-number">3</span>Предлагай повторить, когда у гостя осталась 1/3 бокала</div>
+      <div class="rule-item"><span class="rule-number">1</span>Знай состав – из этого пособия</div>
+      <div class="rule-item"><span class="rule-number">2</span>Не уверен в аллергене? «Уточню у бармена»</div>
+      <div class="rule-item"><span class="rule-number">3</span>Предлагай повтор, когда осталась 1/3 бокала</div>
     </div>
   </section>
 
@@ -170,7 +170,6 @@
 
   <main class="container" id="mainContent"></main>
 
-  <!-- Modal -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
     <div class="modal" onclick="event.stopPropagation()">
       <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -178,84 +177,184 @@
     </div>
   </div>
 
-  <footer style="text-align:center; padding:2rem 1rem; background:var(--bg-secondary); border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem;">
+  <footer style="text-align:center; padding:2rem 1rem; background:var(--bg-secondary); border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.8rem;">
     <p>© 2026 Трактир / Шахерезада • Учебное пособие для официантов</p>
   </footer>
 
   <script>
-    // === МЕНЮ С ПОДРОБНЫМИ ОПИСАНИЯМИ ===
+    // === COMPLETE MENU DATABASE (Based on PDF & TTK) ===
     const menuData = [
-      {
-        id: 'water', title: '💧 Минеральная вода', icon: '',
-        items: [
-          { name: 'Байкал', volume: '530 мл', ingredients: ['Газированная', 'Не газированная'], allergens: [], script: '«Мягкая столовая вода – отлично утоляет жажду»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 390, description: 'Мягкая сибирская вода из озера Байкал. Идеальна для утоления жажды.' },
-          { name: 'Недра', volume: '750 мл', ingredients: ['Газированная', 'Не газированная'], allergens: [], script: '«Премиальная российская вода из Новгородской области»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 610, description: 'Премиальная вода из артезианских источников Новгородской области.' },
-          { name: 'Боржоми', volume: '500 мл', ingredients: ['Минеральная лечебно-столовая'], allergens: [], script: '«Легендарная грузинская вода, помогает пищеварению»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 450, description: 'Знаменитая грузинская минеральная вода с вулканического источника. Помогает пищеварению.' }
-        ]
-      },
-      {
-        id: 'non-alc', title: '🥤 Безалкогольное', icon: '🥤',
-        items: [
-          { name: 'Квас домашний', volume: '250 мл', ingredients: ['Вода', 'Сусло (ячмень)', 'Сахар', 'Дрожжи', 'Изюм'], allergens: ['Глютен'], script: '«Наш квас – живой, нефильтрованный, с хлебным ароматом»', serving: 'Стакан со льдом', price: 350, description: 'Традиционный русский напиток двойного брожения. Готовим сами каждый день.' },
-          { name: 'Медовуха', volume: '250 мл', ingredients: ['Мёд', 'Дрожжи', 'Изюм', 'Вода'], allergens: ['Мёд'], script: '«Старинный напиток на мёду – пьётся легко»', serving: 'Стакан со льдом', price: 400, description: 'Слабоалкогольный напиток на основе мёда по старинному рецепту.' },
-          { name: 'Морс', volume: '200 мл', ingredients: ['Смородина', 'Клюква', 'Облепиха', 'Сахар', 'Вода'], allergens: [], script: '«Домашний морс из настоящих ягод»', serving: 'Стакан со льдом', price: 300, description: 'Натуральный ягодный морс без консервантов.' }
-        ]
-      },
-      {
-        id: 'lemonades', title: '🍋 Домашние лимонады', icon: '🍋',
-        items: [
-          { name: 'Райхон', volume: '300 мл', ingredients: ['Настой фиолетового базилика', 'Сахар', 'Лимонная кислота', 'Газировка'], allergens: [], script: '«С ароматом свежего базилика»', serving: 'Высокий стакан со льдом', price: 460, description: 'Освежающий лимонад с настоем фиолетового базилика (райхон). Популярный вкус в Средней Азии.' },
-          { name: 'Тархун', volume: '300 мл', ingredients: ['Экстракт эстрагона', 'Лимон', 'Сахар', 'Газировка', 'Лайм'], allergens: [], script: '«Натуральный тархун – вкус из детства»', serving: 'Высокий стакан со льдом', price: 460, description: 'Классический тархун на натуральном экстракте эстрагона.' },
-          { name: 'Манго Маракуйя Кокос', volume: '300 мл', ingredients: ['Пюре манго', 'Маракуйя', 'Кокосовое молоко', 'Газировка', 'Мармеладные шарики'], allergens: ['Кокос'], script: '«Тропический взрыв – самый популярный»', serving: 'Высокий стакан со льдом', price: 460, description: 'Наш бестселлер! Тропический микс с кокосовым молоком и мармеладными шариками.' }
-        ]
-      },
-      {
-        id: 'cocktails', title: '🍸 Коктейли', icon: '🍸',
-        items: [
-          { name: 'Апероль Спритц', volume: '', ingredients: ['Апероль', 'Игристое вино', 'Газировка', 'Апельсин'], allergens: ['Сульфиты'], script: '«Венецианский аперитив»', serving: 'Бокал спритц', price: 850, description: 'Классический итальянский аперитив. Горьковато-апельсиновый вкус с пузырьками.', strength: '11%' },
-          { name: 'Негрони', volume: '', ingredients: ['Джин', 'Кампари', 'Сладкий красный вермут', 'Апельсиновая цедра'], allergens: ['Сульфиты'], script: '«Для ценителей горького баланса»', serving: 'Рокс', price: 850, description: 'Легендарный коктейль 1919 года. Идеальный баланс горечи, сладости и крепости.', strength: '28%' },
-          { name: 'Лавандовый джин-тоник', volume: '', ingredients: ['Джин', 'Лавандовый сироп', 'Тоник', 'Мармеладные шарики'], allergens: [], script: '«Фиолетовый, с ароматом лаванды. Самый фотогеничный»', serving: 'Винный бокал', price: 850, description: 'Авторский коктейль с лавандовым сиропом. Нежный цветочный аромат.', strength: '12%' },
-          { name: 'Дайкири Банан', volume: '', ingredients: ['Белый ром', 'Банановый сироп', 'Лайм', 'Свежий банан'], allergens: [], script: '«Поджигаем банан у стола»', serving: 'Коктейльная рюмка + карамелизованный банан', price: 850, description: 'Шоу-коктейль! Карамелизуем банан прямо у стола гостя.', strength: '15%' },
-          { name: 'Берёзовый виски коллинз', volume: '', ingredients: ['Бурбон', 'Берёзово-душицево-квасной сироп', 'Розмарин', 'Содовая'], allergens: [], script: '«На берёзовом соке – наша гордость»', serving: 'Хайбол, розмарин', price: 850, description: 'Уникальный авторский коктейль на берёзовом соке. Русская интерпретация классики.', strength: '14%' }
-        ]
-      },
-      {
-        id: 'tinctures', title: '🫙 Авторские настойки', icon: '🫙',
-        items: [
-          { name: 'Северная морошка', volume: '50 мл', ingredients: ['Водка', 'Ягоды морошки'], allergens: [], script: 'Яркий ягодный, кисло-сладкий', serving: 'Рюмка', price: 500, description: 'Настойка на арктической морошке. Золотистый цвет, нежный ягодный вкус.', strength: '35%' },
-          { name: 'Сливянка', volume: '50 мл', ingredients: ['Тёмный ром', 'Слива', 'Кизил', 'Пряности'], allergens: [], script: 'Кисло-сладкая, согревающая', serving: 'Рюмка', price: 500, description: 'Настойка на тёмном роме с добавлением кизила. Карамельные ноты от выдержки рома.', strength: '32%' },
-          { name: 'Хреновуха', volume: '50 мл', ingredients: ['Водка', 'Хрен', 'Дижонская горчица', 'Специи'], allergens: [], script: '«Острая, на водке с хреном и горчицей – для любителей погорячее»', serving: 'Рюмка (охлаждённая)', price: 500, description: 'Классическая русская настойка. Подаём охлаждённой. Идеальна к мясу.', strength: '37%' },
-          { name: 'Сет настоек «Топ 8»', volume: '8×50 мл', ingredients: ['8 разных позиций'], allergens: ['Разные'], script: '«Попробуйте сразу несколько – сет выгоднее и интереснее»', serving: 'Сет из 8 рюмок', price: 3600, description: 'Дегустационный сет из 8 лучших настоек. Состав обновляется еженедельно.' }
-        ]
-      },
-      {
-        id: 'strong', title: '🥃 Крепкий алкоголь', icon: '',
-        items: [
-          { name: 'Ники Пьюр', volume: '50 мл', ingredients: ['Солодовый спирт Альфа', 'Вода'], allergens: [], script: '«Солодовый спирт Альфа, очень мягкая»', serving: 'Рюмка (охлаждённая)', price: 610, description: 'Премиальная водка на солодовом спирте категории Альфа. Очень мягкая, без посторонних запахов.', strength: '40%' },
-          { name: 'Глен Морей 12 лет', volume: '50 мл', ingredients: ['Односолодовый виски'], allergens: ['Глютен'], script: 'Цветочно-фруктовый', serving: 'Бокал глинкерн', price: 1200, description: 'Шотландский односолодовый виски из региона Спейсайд. Выдержка 12 лет. Цветочные и фруктовые ноты.', strength: '40%' },
-          { name: 'Матусалем Гран Резерва 15 лет', volume: '50 мл', ingredients: ['Ром'], allergens: [], script: '15 лет выдержки', serving: 'Бокал глинкерн', price: 1100, description: 'Премиальный доминиканский ром 15-летней выдержки. Карамель, изюм, специи.', strength: '40%' }
-        ]
-      },
-      {
-        id: 'game', title: '🎮 Игра: Барный Мастер', icon: '🎮', game: true, items: []
-      },
-      {
-        id: 'allergens', title: '⚠️ Аллергены', icon: '⚠️',
-        allergenTable: [
-          { name: 'Глютен', locations: 'Всё пиво, квас, виски, джин, полба, полугар' },
-          { name: 'Молоко', locations: 'Капучино, латте, матча, милкшейки, какао, раф' },
-          { name: 'Яйцо', locations: 'Абрикосовый сауэр, Киви Крыжовник смэш, Манго Маракуйя' },
-          { name: 'Мёд', locations: 'Медовуха, взвары (Яблоко, Облепиха, Груша), смузи' },
-          { name: 'Сульфиты', locations: 'Сидр, вермуты в коктейлях' }
-        ],
-        items: []
-      },
-      {
-        id: 'resources', title: '🔗 Полезные ресурсы', icon: '🔗', resources: true, items: []
-      },
-      {
-        id: 'quiz', title: '📝 Тест', icon: '📝', items: []
-      }
+      { id: 'water', title: '💧 Минеральная вода', icon: '💧', items: [
+        { name: 'Байкал', volume: '530 мл', ingredients: ['Газированная', 'Не газированная'], allergens: [], script: '«Мягкая столовая вода – отлично утоляет жажду»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 390, desc: 'Сибирская мягкая вода. Идеальна для утоления жажды.' },
+        { name: 'Недра', volume: '750 мл', ingredients: ['Газированная', 'Не газированная'], allergens: [], script: '«Премиальная российская вода из Новгородской области»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 610, desc: 'Артезианская вода премиум-класса.' },
+        { name: 'Боржоми', volume: '500 мл', ingredients: ['Минеральная лечебно-столовая'], allergens: [], script: '«Легендарная грузинская вода, помогает пищеварению»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 450, desc: 'Грузинская минеральная вода с вулканического источника.' }
+      ]},
+      { id: 'non-alc', title: '🥤 Безалкогольное', icon: '🥤', items: [
+        { name: 'Сок ВИЗ', volume: '0,2 л', ingredients: ['Апельсин', 'Яблоко', 'Томат', 'Вишня'], allergens: [], script: '', serving: 'Стакан хайбол, трубочка', price: 380, desc: 'Натуральные соки премиум качества.' },
+        { name: 'Свежевыжатый сок', volume: '0,2 л', ingredients: ['Апельсин', 'Грейпфрут', 'Яблоко', 'Морковь', 'Сельдерей'], allergens: [], script: '«Выжимаем по заказу – максимум витаминов»', serving: 'Стакан хайбол, трубочка', price: 460, desc: 'Фреш из свежих фруктов и овощей.' },
+        { name: 'Кока-Кола / Фанта / Спрайт', volume: '0,25 л', ingredients: ['Газировка'], allergens: [], script: 'Классика', serving: 'Стакан со льдом', price: 360, desc: 'Популярные газированные напитки.' },
+        { name: 'Тоник классический / Имбирный', volume: '0,2 л', ingredients: ['Тоник', 'Имбирный эль'], allergens: [], script: '«Имбирный эль – пикантный, жгучий. Идеально к джину»', serving: 'Стакан со льдом и лаймом', price: 370, desc: 'Классический тоник или жгучий имбирный эль.' },
+        { name: 'Морс', volume: '0,2 л', ingredients: ['Смородина', 'Клюква', 'Облепиха', 'Сахар', 'Вода'], allergens: [], script: '«Домашний морс из настоящих ягод»', serving: 'Стакан со льдом', price: 300, desc: 'Натуральный ягодный морс без консервантов.' },
+        { name: 'Квас домашний / Вишнёвый', volume: '0,25 л', ingredients: ['Вода', 'Сусло (ячмень)', 'Сахар', 'Дрожжи', 'Изюм', 'Вишня'], allergens: ['Глютен'], script: '«Наш квас – живой, нефильтрованный, с хлебным ароматом»', serving: 'Стакан со льдом', price: 350, desc: 'Двойное брожение. Живой, нефильтрованный, с хлебным духом.' },
+        { name: 'Медовуха', volume: '0,25 л', ingredients: ['Мёд', 'Дрожжи', 'Изюм', 'Вода'], allergens: ['Мёд'], script: '«Старинный напиток на мёду – пьётся легко»', serving: 'Стакан со льдом', price: 400, desc: 'Слабоалкогольный напиток на основе мёда по старинному рецепту.' }
+      ]},
+      { id: 'lemonades', title: '🍋 Домашние лимонады', icon: '🍋', items: [
+        { name: 'Райхон', volume: '300 мл', ingredients: ['Настой фиолетового базилика', 'Сахар', 'Лимонная кислота', 'Газировка'], allergens: [], script: '«С ароматом свежего базилика»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Освежающий лимонад с настоем фиолетового базилика.' },
+        { name: 'Тархун', volume: '300 мл', ingredients: ['Экстракт эстрагона', 'Лимон', 'Сахар', 'Газировка', 'Лайм'], allergens: [], script: '«Натуральный тархун – вкус из детства»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Классический тархун на натуральном экстракте эстрагона.' },
+        { name: 'Мандариновый', volume: '300 мл', ingredients: ['Пюре мандаринов', 'Юдзу', 'Фруктозный сироп', 'Газировка', 'Мармеладные шарики'], allergens: [], script: '«Солнечный, с кислинкой юдзу»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Солнечный вкус с яркой кислинкой юдзу.' },
+        { name: 'Имбирь мёд лимон', volume: '300 мл', ingredients: ['Имбирный сок', 'Мёд', 'Лайм', 'Газировка'], allergens: ['Мёд'], script: '«Имбирный лимонад с мёдом – согревает»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Пряный имбирь, сладкий мёд и лайм.' },
+        { name: 'Смородина Иван-Чай', volume: '300 мл', ingredients: ['Пюре чёрной смородины', 'Отвар иван-чая', 'Газировка', 'Свежие ягоды'], allergens: [], script: '«Таёжный вкус: ягоды + травы»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Сочетание таёжных ягод и травяного иван-чая.' },
+        { name: 'Манго Маракуйя Кокос', volume: '300 мл', ingredients: ['Пюре манго', 'Маракуйя', 'Кокосовое молоко', 'Газировка', 'Мармеладные шарики'], allergens: ['Кокос'], script: '«Тропический взрыв – самый популярный»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Наш бестселлер! Тропический микс с кокосовым молоком.' },
+        { name: 'Огурец и мята', volume: '300 мл', ingredients: ['Огуречный сок', 'Мята', 'Лайм', 'Газировка'], allergens: [], script: '«Лёгкий, как глоток родниковой воды»', serving: 'Высокий стакан со льдом', price: 460, desc: 'Свежий, чистый вкус огурца и мяты.' },
+        { name: 'Лимонад в графине', volume: '800 мл', ingredients: ['Любой вкус на выбор'], allergens: [], script: '«На компанию выгоднее графин»', serving: 'Графин со льдом и фруктами', price: 1350, desc: 'Большой объём для компании.' }
+      ]},
+      { id: 'smoothies', title: '🥛 Смузи / Милкшейки', icon: '', items: [
+        { name: 'Смузи Манговый Урбеч', volume: '290 мл', ingredients: ['Манго', 'Банан', 'Урбеч из тыквенных семечек', 'Мёд', 'Кокосовое молоко'], allergens: ['Мёд', 'Кокос', 'Семечки'], script: '«Полезный заряд энергии»', serving: 'Высокий стакан, трубочка', price: 600, desc: 'Питательный смузи с урбечем.' },
+        { name: 'Смузи Яблоко Банан', volume: '290 мл', ingredients: ['Яблоко', 'Банан', 'Мёд', 'Зелёные мармеладные шарики'], allergens: ['Мёд'], script: '«Банановая нежность и яблочная свежесть»', serving: 'Высокий стакан, трубочка', price: 600, desc: 'Классическое сочетание яблока и банана.' },
+        { name: 'Милкшейк Ванильный', volume: '300 мл', ingredients: ['Мороженое', 'Молоко', 'Ванильный сироп', 'Взбитые сливки', 'Банан'], allergens: ['Молоко', 'Яйцо'], script: '«Нежный, воздушный»', serving: 'Высокий стакан, трубочка', price: 550, desc: 'Классический ванильный милкшейк.' },
+        { name: 'Милкшейк Ягодный', volume: '300 мл', ingredients: ['Мороженое', 'Молоко', 'Ягодный топпинг', 'Банан'], allergens: ['Молоко', 'Яйцо'], script: '«Ягодный микс»', serving: 'Высокий стакан, трубочка', price: 550, desc: 'Ягодный микс с мороженым.' },
+        { name: 'Милкшейк Шоколадный', volume: '300 мл', ingredients: ['Мороженое', 'Молоко', 'Шоколадный топпинг', 'Банан', 'Ореховый сироп'], allergens: ['Молоко', 'Яйцо', 'Орехи'], script: '«Шоколадно-ореховое удовольствие»', serving: 'Высокий стакан, трубочка', price: 550, desc: 'Шоколадно-ореховый вкус.' },
+        { name: 'Айс Латте Банан Карамель', volume: '290 мл', ingredients: ['Эспрессо', 'Молоко', 'Банановый сироп', 'Карамель', 'Взбитые сливки', 'Лёд'], allergens: ['Молоко'], script: '«Кофе с бананом и карамелью»', serving: 'Высокий стакан, трубочка', price: 460, desc: 'Холодный кофейный напиток.' }
+      ]},
+      { id: 'vzvary', title: '☕ Взвары (горячие)', icon: '', items: [
+        { name: 'Мандарин белый кардамон', volume: '500 мл', ingredients: ['Мандариновый сок', 'Цедра', 'Кардамон', 'Кипяток'], allergens: [], script: '«Пряный, согревающий»', serving: 'Керамическая чашка', price: 650, desc: 'Пряный согревающий напиток.' },
+        { name: 'Яблоко корица османтус', volume: '500 мл', ingredients: ['Яблоко', 'Корица', 'Чай османтус', 'Мёд', 'Кипяток'], allergens: ['Мёд'], script: '«Аромат яблочного пирога»', serving: 'Керамическая чашка', price: 650, desc: 'Напоминает аромат свежей выпечки.' },
+        { name: 'Смородина Иван-Чай', volume: '500 мл', ingredients: ['Пюре чёрной смородины', 'Лимон', 'Иван-чай', 'Мята', 'Кипяток'], allergens: [], script: '«Ягодно-травяной»', serving: 'Керамическая чашка', price: 650, desc: 'Сочетание ягод и травяного чая.' },
+        { name: 'Груша имбирь мёд', volume: '500 мл', ingredients: ['Груша', 'Имбирь', 'Лайм', 'Мята', 'Мёд', 'Кипяток'], allergens: ['Мёд'], script: '«Имбирно-грушевый согревающий»', serving: 'Керамическая чашка', price: 650, desc: 'Согревающий напиток с грушей и имбирём.' },
+        { name: 'Облепиха корица', volume: '500 мл', ingredients: ['Облепиха', 'Корица', 'Ванильный сироп', 'Лимон', 'Кипяток'], allergens: [], script: '«Витаминная бомба»', serving: 'Керамическая чашка', price: 650, desc: 'Насыщенный облепиховый напиток.' },
+        { name: 'Глинтвейн безалкогольный', volume: '500 мл', ingredients: ['Пряный сироп на виноградном соке', 'Корица', 'Апельсин', 'Яблоко', 'Кипяток'], allergens: [], script: '«Пряная альтернатива кофе»', serving: 'Керамическая чашка', price: 650, desc: 'Безалкогольная версия глинтвейна.' }
+      ]},
+      { id: 'tea', title: '🍵 Классический чай', icon: '🍵', items: [
+        { name: 'Ассам / Эрл Грей / Сенча / Молочный Улун', volume: '800 мл', ingredients: ['Чёрные: Ассам, Эрл Грей', 'Зелёный: Сенча', 'Молочный Улун'], allergens: [], script: '«Молочный улун – наш бестселлер, у него кремовый вкус»', serving: 'Чайник, чашки', price: 560, desc: 'Классические сорта чая. Молочный улун имеет натуральный сливочный аромат.' },
+        { name: 'Добавки к чаю', volume: '10 г', ingredients: ['Мята', 'Чабрец', 'Липа', 'Корень имбиря', 'Лимон', 'Мёд'], allergens: ['Мёд'], script: '', serving: '', price: 160, desc: 'Травы, специи и мёд для усиления вкуса.' }
+      ]},
+      { id: 'herbal-tea', title: '🌿 Авторские и травяные чаи', icon: '🌿', items: [
+        { name: 'Полевой сбор алтайских трав', volume: '800 мл', ingredients: ['Иван-чай', 'Таволга', 'Лист берёзы', 'Эхинацея', 'Душица'], allergens: [], script: 'Успокаивающий эффект', serving: 'Чайник, чашки', price: 600, desc: 'Сбор алтайских трав.' },
+        { name: 'Таёжный сбор с молодыми шишками', volume: '800 мл', ingredients: ['Иван-чай', 'Душица', 'Кедровая хвоя', 'Шиповник', 'Шишки'], allergens: [], script: 'Согревающий, смолистый', serving: 'Чайник, чашки', price: 600, desc: 'Смолистый аромат хвои.' },
+        { name: 'Горный сбор кавказских трав', volume: '800 мл', ingredients: ['Чабрец', 'Зверобой', 'Душица', 'Мята'], allergens: [], script: 'Тонизирующий', serving: 'Чайник, чашки', price: 600, desc: 'Тонизирующий сбор.' },
+        { name: 'Иван-Чай', volume: '800 мл', ingredients: ['Только кипрей'], allergens: [], script: 'Мягкий, слегка сладковатый', serving: 'Чайник, чашки', price: 600, desc: 'Чистый кипрей.' },
+        { name: 'Саган-Дайля (шаманский чай)', volume: '800 мл', ingredients: ['Рододендрон Адамса'], allergens: [], script: '«Очень бодрит (сильнее кофе). Бодрит, но давление не скачет»', serving: 'Чайник, чашки', price: 600, desc: 'Шаманский чай из Бурятии.' },
+        { name: 'Ромашка с мятой', volume: '800 мл', ingredients: ['Цветки ромашки', 'Листья мяты'], allergens: [], script: 'Спальный, успокаивающий', serving: 'Чайник, чашки', price: 600, desc: 'Классический успокаивающий сбор.' },
+        { name: 'Липовый с османтусом и апельсином', volume: '800 мл', ingredients: ['Липа', 'Османтус', 'Цедра апельсина'], allergens: [], script: 'Медово-цитрусовый', serving: 'Чайник, чашки', price: 600, desc: 'Медово-цитрусовый аромат.' }
+      ]},
+      { id: 'coffee', title: '☕ Кофе', icon: '', items: [
+        { name: 'Эспрессо', volume: '30 мл', ingredients: ['100% арабика'], allergens: [], script: 'Правило 4 часов: ручка чашки, ложечка, сахар – параллельно. + стакан воды', serving: 'Малая пара + вода из кулера', price: 350, desc: 'Классический эспрессо.' },
+        { name: 'Двойной эспрессо', volume: '60 мл', ingredients: ['100% арабика'], allergens: [], script: 'Правило 4 часов', serving: 'Малая пара + вода из кулера', price: 380, desc: 'Удвоенная порция.' },
+        { name: 'Американо', volume: '200 мл', ingredients: ['100% арабика'], allergens: [], script: '', serving: 'Большая пара', price: 350, desc: 'Эспрессо с горячей водой.' },
+        { name: 'Капучино', volume: '200 мл', ingredients: ['Эспрессо', 'Молоко'], allergens: ['Молоко'], script: 'Есть альтернативное молоко: кокос, миндаль, банан', serving: 'Большая пара', price: 390, desc: 'Классический капучино.' },
+        { name: 'Двойной капучино', volume: '350 мл', ingredients: ['Эспрессо', 'Молоко'], allergens: ['Молоко'], script: 'Есть альтернативное молоко', serving: 'Термопот', price: 440, desc: 'Увеличенный объём.' },
+        { name: 'Латте макиато', volume: '350 мл', ingredients: ['Эспрессо', 'Молоко'], allergens: ['Молоко'], script: 'Есть альтернативное молоко', serving: 'Термопот, трубочка', price: 400, desc: 'Слоистый кофейный напиток.' },
+        { name: 'Раф с карамелью', volume: '350 мл', ingredients: ['Эспрессо', 'Сливки', 'Карамель'], allergens: ['Молоко', 'Сливки'], script: 'Нежный сливочный вкус', serving: 'Термопот', price: 470, desc: 'Взбитый кофе со сливками.' },
+        { name: 'Флэт уайт', volume: '200 мл', ingredients: ['Двойной эспрессо', 'Молоко'], allergens: ['Молоко'], script: 'Кофейный, с тонким слоем пены', serving: 'Большая пара', price: 440, desc: 'Кофейный вкус с микропеной.' },
+        { name: 'Капучино/латте на альтернативном молоке', volume: '200–350 мл', ingredients: ['Кокос', 'Миндаль', 'Банан'], allergens: ['Кокос', 'Орехи', 'Соя'], script: 'Для тех, кто не пьёт обычное молоко', serving: 'По типу напитка', price: '390/450', desc: 'Варианты на растительном молоке.' },
+        { name: 'Матча латте', volume: '350 мл', ingredients: ['Зелёный чай матча', 'Молоко'], allergens: ['Молоко'], script: 'Есть на альтернативном молоке', serving: 'Термопот', price: 600, desc: 'Японский зелёный чай с молоком.' },
+        { name: 'Какао с маршмеллоу', volume: '270 мл', ingredients: ['Какао', 'Молоко', 'Маршмеллоу'], allergens: ['Молоко'], script: 'Нежный шоколадный вкус', serving: 'Чашка', price: 350, desc: 'Горячий шоколад.' },
+        { name: 'Сироп в ассортименте', volume: '10 мл', ingredients: ['Ваниль', 'Карамель', 'Орех'], allergens: [], script: '', serving: '', price: 120, desc: 'Добавка вкуса.' }
+      ]},
+      { id: 'beer', title: '🍺 Пиво / Сидр', icon: '🍺', items: [
+        { name: 'Перони Настро Адзурро', volume: '330 мл', ingredients: ['Италия'], allergens: ['Глютен'], script: 'Лёгкий итальянский лагер', serving: 'Бутылка, бокал', price: 690, desc: 'Итальянский лагер с кукурузой.' },
+        { name: 'Корона Экстра', volume: '335 мл', ingredients: ['Мексика'], allergens: ['Глютен'], script: 'Классический мексиканский лагер', serving: 'Бутылка + долька лайма (обязательно!)', price: 590, desc: 'Мексиканский светлый лагер.' },
+        { name: 'Циндао Витбир', volume: '330 мл', ingredients: ['Китай'], allergens: ['Глютен'], script: 'Пшеничное с цитрусовыми нотами', serving: 'Бутылка, бокал', price: 610, desc: 'Китайское пшеничное пиво.' },
+        { name: 'Клаусталер (безалкогольное)', volume: '330 мл', ingredients: ['Германия'], allergens: ['Глютен (следы)'], script: 'Немецкое безалкогольное', serving: 'Бутылка, бокал', price: 500, desc: 'Немецкое безалкогольное.' },
+        { name: 'Радебергер', volume: '330 мл', ingredients: ['Германия'], allergens: ['Глютен'], script: 'Премиальный немецкий лагер', serving: 'Бутылка, бокал', price: 690, desc: 'Премиальный немецкий лагер.' },
+        { name: 'Сидр Дальняя Дача', volume: '330 мл', ingredients: ['Россия'], allergens: ['Сульфиты'], script: 'Натуральный яблочный сидр', serving: 'Бутылка, бокал', price: 670, desc: 'Российский яблочный сидр.' },
+        { name: 'Бланш Де Брюселль (разливное)', volume: '500 мл', ingredients: ['Бельгия'], allergens: ['Глютен'], script: 'Бельгийское пшеничное с пряностями', serving: 'Брендовый бокал', price: 700, desc: 'Бельгийское пшеничное.' },
+        { name: 'Штигль Гольдбрау (разливное)', volume: '500 мл', ingredients: ['Австрия'], allergens: ['Глютен'], script: 'Австрийский лагер, хлебный вкус', serving: 'Брендовый бокал', price: 760, desc: 'Австрийский светлый лагер.' }
+      ]},
+      { id: 'cocktails', title: '🍸 Коктейли', icon: '🍸', items: [
+        { name: 'Апероль Спритц', volume: '', ingredients: ['Апероль', 'Игристое вино', 'Газировка', 'Апельсин'], allergens: ['Сульфиты'], script: '«Венецианский аперитив»', serving: 'Бокал спритц', price: 850, desc: 'Горьковато-апельсиновый аперитив.', strength: '11%' },
+        { name: 'Кампари Спритц', volume: '', ingredients: ['Кампари', 'Игристое', 'Газировка', 'Апельсин'], allergens: ['Сульфиты'], script: '«Насыщенный, травянистый»', serving: 'Бокал спритц', price: 850, desc: 'Травянистый горький аперитив.', strength: '11%' },
+        { name: 'Лавандовый джин-тоник', volume: '', ingredients: ['Джин', 'Лавандовый сироп', 'Тоник', 'Мармеладные шарики'], allergens: [], script: '«Фиолетовый, с ароматом лаванды. Самый фотогеничный»', serving: 'Винный бокал', price: 850, desc: 'Авторский коктейль с лавандовым сиропом.', strength: '12%' },
+        { name: 'Дайкири Банан', volume: '', ingredients: ['Белый ром', 'Банановый сироп', 'Лайм', 'Свежий банан'], allergens: [], script: '«Поджигаем банан у стола»', serving: 'Коктейльная рюмка + карамелизованный банан', price: 850, desc: 'Шоу-коктейль! Карамелизуем банан у стола.', strength: '15%' },
+        { name: 'Гранат смородина розовый брют', volume: '', ingredients: ['Гранатовый сок', 'Смородиновый сок', 'Розовое игристое', 'Мята', 'Зёрна граната'], allergens: ['Сульфиты'], script: '«Ягодное игристое»', serving: 'Бокал коллинз', price: 850, desc: 'Ягодное игристое с мятой.', strength: '11%' },
+        { name: 'Абрикосовый сауэр', volume: '', ingredients: ['Абрикосовый ликёр', 'Водка', 'Лимон', 'Яичный белок', 'Персик'], allergens: ['Яйцо'], script: '«Кисло-сладкий с пеной»', serving: 'Коктейльная рюмка, без трубочки', price: 850, desc: 'Кисло-сладкий с натуральной пеной.', strength: '16%' },
+        { name: 'Базиликовый джин', volume: '', ingredients: ['Джин', 'Молочно-кислый сироп', 'Свежий базилик'], allergens: [], script: '«Очень зелёный, свежий»', serving: 'Рокс, лист базилика', price: 850, desc: 'Свежий травяной коктейль.', strength: '14%' },
+        { name: 'Берёзовый виски коллинз', volume: '', ingredients: ['Бурбон', 'Берёзово-душицево-квасной сироп', 'Розмарин', 'Содовая'], allergens: [], script: '«На берёзовом соке – наша гордость»', serving: 'Хайбол, розмарин', price: 850, desc: 'Уникальный авторский коктейль на берёзовом соке.', strength: '14%' },
+        { name: 'Негрони', volume: '', ingredients: ['Джин', 'Кампари', 'Сладкий красный вермут', 'Апельсиновая цедра'], allergens: ['Сульфиты'], script: '«Для ценителей горького баланса»', serving: 'Рокс', price: 850, desc: 'Идеальный баланс горечи и сладости.', strength: '28%' },
+        { name: 'Манго Маракуйя', volume: '', ingredients: ['Смесь манго и маракуйи', 'Лайм', 'Яичный белок', 'Свежая маракуйя'], allergens: ['Яйцо'], script: '«Тропический сауэр»', serving: 'Шале-бокал', price: 850, desc: 'Тропический сауэр с пеной.', strength: '15%' },
+        { name: 'Смородиновый мул', volume: '', ingredients: ['Настойка чёрной смородины', 'Имбирный эль', 'Лайм', 'Свежие ягоды', 'Мята'], allergens: [], script: '«Русский Moscow Mule»', serving: 'Медная кружка', price: 850, desc: 'Русская версия классического мула.', strength: '13%' },
+        { name: 'Киви Крыжовник смэш', volume: '', ingredients: ['Крыжовник', 'Киви', 'Лайм', 'Яичный белок', 'Порошок матча'], allergens: ['Яйцо'], script: '«Кисло-зелёный с матча»', serving: 'Коктейльная рюмка, посыпана матча', price: 850, desc: 'Кисло-зелёный с матча.', strength: '14%' },
+        { name: 'Огурец женевер лайм', volume: '', ingredients: ['Женевер', 'ПФ Огурец и мята', 'Огурец', 'Мята'], allergens: [], script: 'Освежающий, зелёный', serving: 'Коллинз', price: 850, desc: 'Свежий огуречный коктейль.', strength: '12%' },
+        { name: 'Сарти спритц', volume: '', ingredients: ['Сарти ПФ', 'Игристое Хаус', 'Роза'], allergens: ['Сульфиты'], script: '«Цветочный аперитив с розой»', serving: 'Винный бокал', price: 850, desc: 'Авторский спритц с розой.', strength: '11%' }
+      ]},
+      { id: 'liqueurs', title: '🥃 Ликёры', icon: '🥃', items: [
+        { name: 'Кампари', volume: '50 мл', ingredients: ['Италия'], allergens: [], script: 'Горький апельсиновый', serving: 'Рюмка', price: 640, desc: 'Горький травяной ликёр.' },
+        { name: 'Фернет Бранка', volume: '50 мл', ingredients: ['Италия'], allergens: [], script: 'Травяной биттер', serving: 'Рюмка', price: 640, desc: 'Травяной биттер.' },
+        { name: 'Егермейстер', volume: '50 мл', ingredients: ['Германия'], allergens: [], script: 'Травяной ликёр', serving: 'Рюмка', price: 640, desc: 'Травяной ликёр.' }
+      ]},
+      { id: 'tinctures', title: '🫙 Авторские настойки', icon: '🫙', items: [
+        { name: 'Северная морошка', volume: '50 мл', ingredients: ['Водка', 'Ягоды морошки'], allergens: [], script: 'Яркий ягодный, кисло-сладкий', serving: 'Рюмка', price: 500, desc: 'Настойка на арктической морошке.' },
+        { name: 'Сливянка', volume: '50 мл', ingredients: ['Тёмный ром', 'Слива', 'Кизил', 'Пряности'], allergens: [], script: 'Кисло-сладкая, согревающая', serving: 'Рюмка', price: 500, desc: 'Настойка на тёмном роме с кизилом.' },
+        { name: 'Гранатовая', volume: '50 мл', ingredients: ['Водка', 'Гранат', 'Наршараб', 'Вермут', 'Гренадин'], allergens: [], script: 'Насыщенная, фруктовая', serving: 'Рюмка', price: 500, desc: 'Настойка на гранате.' },
+        { name: 'Жимолость', volume: '50 мл', ingredients: ['Водка', 'Ягоды жимолости', 'Цедра лайма', 'Вермут', 'Ликёр Фиалка'], allergens: [], script: 'Нежная, ягодная', serving: 'Рюмка', price: 500, desc: 'Нежная ягодная настойка.' },
+        { name: 'Пряная груша', volume: '50 мл', ingredients: ['Водка', 'Груша', 'Корица', 'Гвоздика', 'Конфитюр груша'], allergens: [], script: 'Сладкая, пряная', serving: 'Рюмка', price: 500, desc: 'Груша с корицей и гвоздикой.' },
+        { name: 'Малина тархун', volume: '50 мл', ingredients: ['Ром', 'Малина', 'Эстрагон', 'Чай каркаде', 'Ликёр Бузина'], allergens: [], script: 'Фруктово-травяная', serving: 'Рюмка', price: 500, desc: 'Малина с эстрагоном на роме.' },
+        { name: 'Грейпфрут и роза', volume: '50 мл', ingredients: ['Водка', 'Грейпфрут', 'Бутоны розы', 'Каркаде', 'Ликёр Грейпфрут'], allergens: [], script: 'Цветочно-цитрусовая', serving: 'Рюмка', price: 500, desc: 'Цветочно-цитрусовая настойка.' },
+        { name: 'Лимончелло', volume: '50 мл', ingredients: ['Водка', 'Лимонная цедра', 'Сахар'], allergens: [], script: 'Освежающая цитрусовая', serving: 'Рюмка (охлаждённая)', price: 500, desc: 'Итальянская классика.' },
+        { name: 'Клюквенная', volume: '50 мл', ingredients: ['Водка', 'Клюква', 'Чернослив', 'Вермут', 'Гренадин'], allergens: [], script: 'Кисло-сладкая', serving: 'Рюмка', price: 500, desc: 'Кисло-сладкая клюква.' },
+        { name: 'Сезонный крыжовник', volume: '50 мл', ingredients: ['Водка', 'Крыжовник', 'Киви', 'Ликёр Клубника'], allergens: [], script: 'Сезонная, кисло-сладкая', serving: 'Рюмка', price: 500, desc: 'Сезонная ягодная.' },
+        { name: 'Клубника лемонграсс', volume: '50 мл', ingredients: ['Текила', 'Клубника', 'Лемонграсс', 'Ликёр Клубника'], allergens: [], script: 'Ягодная с цитрусовой свежестью', serving: 'Рюмка', price: 500, desc: 'Клубника с лемонграссом.' },
+        { name: 'Красная смородина перец', volume: '50 мл', ingredients: ['Водка', 'Смородина', 'Розовый перец', 'Апероль', 'Кордиал'], allergens: [], script: 'Фруктово-пряная, с перчинкой', serving: 'Рюмка', price: 500, desc: 'Смородина с розовым перцем.' },
+        { name: 'Хреновуха', volume: '50 мл', ingredients: ['Водка', 'Хрен', 'Дижонская горчица', 'Специи', 'Мёд', 'Херес'], allergens: [], script: '«Острая, на водке с хреном и горчицей – для любителей погорячее»', serving: 'Рюмка (охлаждённая)', price: 500, desc: 'Классическая русская острая настойка.' },
+        { name: 'Перцовка', volume: '50 мл', ingredients: ['Водка', 'Перец'], allergens: [], script: 'Острая, согревающая', serving: 'Рюмка (охлаждённая)', price: 500, desc: 'Острая перцовая.' },
+        { name: 'Вишнёвая на джине', volume: '50 мл', ingredients: ['Джин', 'Вишня', 'Водка', 'Ликёр Вишня', 'Кордиал'], allergens: [], script: 'Вишня с лёгким можжевеловым оттенком', serving: 'Рюмка', price: 500, desc: 'Вишня на джине.' },
+        { name: 'Черноплодная рябина', volume: '50 мл', ingredients: ['Водка', 'Черноплодная рябина', 'Ликёр Джабара', 'Вермут', 'Кордиал'], allergens: [], script: 'Терпкая, с горчинкой', serving: 'Рюмка', price: 500, desc: 'Терпкая рябина.' },
+        { name: 'Сет настоек «Топ 8»', volume: '8×50 мл', ingredients: ['8 разных позиций'], allergens: ['Разные'], script: '«Попробуйте сразу несколько – сет выгоднее и интереснее»', serving: 'Сет из 8 рюмок', price: 3600, desc: 'Дегустационный сет. Состав обновляется еженедельно.' }
+      ]},
+      { id: 'premium-tinctures', title: '💎 Настойки на водке NIKI PURE', icon: '💎', items: [
+        { name: 'Кавказский кизил', volume: '50 мл', ingredients: ['Водка Niki Pure', 'Кизил', 'Чёрная смородина', 'Красный вермут', 'Кордиал'], allergens: [], script: 'Густой кизил с терпкостью', serving: 'Рюмка', price: 600, desc: 'На премиальной водке.' },
+        { name: 'Брусника саган-дайля', volume: '50 мл', ingredients: ['Водка Niki Pure', 'Брусника', 'Саган-дайля', 'Розовый перец', 'Аперитивный ликёр', 'Кордиал'], allergens: [], script: 'Кисло-сладкая, с хвойно-цветочным оттенком', serving: 'Рюмка', price: 600, desc: 'Хвойно-цветочный оттенок.' },
+        { name: 'Черника вороника', volume: '50 мл', ingredients: ['Водка Niki Pure', 'Черника', 'Чёрная смородина', 'Черничный конфитюр', 'Вермут', 'Кордиал'], allergens: [], script: 'Бархатистый, рубиновый, ягодный', serving: 'Рюмка', price: 600, desc: 'Рубиновый ягодный вкус.' },
+        { name: 'Чёрная смородина', volume: '50 мл', ingredients: ['Водка Niki Pure', 'Чёрная смородина', 'Иван-чай', 'Красный вермут', 'Кордиал'], allergens: [], script: 'Ягодно-травяной, с имбирём и апельсином', serving: 'Рюмка', price: 600, desc: 'Ягодно-травяной профиль.' }
+      ]},
+      { id: 'strong', title: '🥃 Крепкий алкоголь', icon: '', items: [
+        { name: 'Ники Пьюр', volume: '50 мл', ingredients: ['Солодовый спирт Альфа'], allergens: [], script: '«Солодовый спирт Альфа, очень мягкая»', serving: 'Рюмка (охлаждённая)', price: 610, desc: 'Премиальная водка на солодовом спирте Альфа.' },
+        { name: 'Царская Золотая', volume: '50 мл', ingredients: ['Водка'], allergens: [], script: 'С нотками липового мёда и кедровых орешков', serving: 'Рюмка (охлаждённая)', price: 490, desc: 'С нотками мёда и орехов.' },
+        { name: 'Целовальник', volume: '50 мл', ingredients: ['Водка'], allergens: [], script: 'Органическая из пшеницы и ржи', serving: 'Рюмка (охлаждённая)', price: 490, desc: 'Органическая водка.' },
+        { name: 'Чистые Росы Органик', volume: '50 мл', ingredients: ['Водка'], allergens: [], script: 'Первая органик-водка России', serving: 'Рюмка (охлаждённая)', price: 490, desc: 'Органическая.' },
+        { name: 'Angostura Reserva', volume: '50 мл', ingredients: ['Ром'], allergens: [], script: 'Травянистый, для коктейлей', serving: 'Рюмка', price: 650, desc: 'Белый ром для коктейлей.' },
+        { name: 'Matusalem Gran Reserva 12 YO', volume: '50 мл', ingredients: ['Ром'], allergens: [], script: '12 лет, карамель, изюм', serving: 'Рюмка', price: 850, desc: 'Выдержанный ром.' },
+        { name: 'Santo Domingo Reserva', volume: '50 мл', ingredients: ['Ром'], allergens: [], script: 'Золотой, ванильно-фруктовый', serving: 'Рюмка', price: 890, desc: 'Золотой ром.' },
+        { name: 'Camus VSOP / XO', volume: '50 мл', ingredients: ['Коньяк'], allergens: [], script: 'От 4 до 10 лет, классика', serving: 'Коньячный бокал', price: 940, desc: 'Классический коньяк.' },
+        { name: 'Gilbert VS', volume: '50 мл', ingredients: ['Коньяк'], allergens: [], script: 'Молодой, свежий', serving: 'Коньячный бокал', price: 600, desc: 'Молодой коньяк.' },
+        { name: 'Castarede Florence C VSOP', volume: '50 мл', ingredients: ['Арманьяк'], allergens: [], script: '6 лет, шафран, орех', serving: 'Коньячный бокал', price: 1100, desc: 'Арманьяк 6 лет.' },
+        { name: 'Calvados Morin VSOP', volume: '50 мл', ingredients: ['Кальвадос'], allergens: [], script: 'Яблочный кальвадос', serving: 'Коньячный бокал', price: 960, desc: 'Яблочный дистиллят.' },
+        { name: 'Nonino Grappa', volume: '50 мл', ingredients: ['Граппа'], allergens: [], script: 'Итальянская граппа (пить охлаждённой)', serving: 'Рюмка', price: 750, desc: 'Итальянская граппа.' },
+        { name: 'Sir Edmund', volume: '50 мл', ingredients: ['Джин'], allergens: [], script: 'Классический с ванилью и кардамоном', serving: 'Рюмка', price: 650, desc: 'Классический джин.' },
+        { name: 'Gin Mare', volume: '50 мл', ingredients: ['Джин'], allergens: [], script: 'Средиземноморский (розмарин, базилик, олива)', serving: 'Рюмка', price: 850, desc: 'Средиземноморский джин.' },
+        { name: 'Hendrick\'s', volume: '50 мл', ingredients: ['Джин'], allergens: [], script: 'С нотками огурца и розы', serving: 'Рюмка', price: 900, desc: 'Шотландский джин с огурцом и розой.' },
+        { name: 'Los Tres Tonos Blanco', volume: '50 мл', ingredients: ['Текила'], allergens: [], script: 'Невыдержанная, дымная', serving: 'Рюмка + сангрита', price: 740, desc: 'Бланко текила.' },
+        { name: 'Los Tres Tonos Reposado', volume: '50 мл', ingredients: ['Текила'], allergens: [], script: '11 месяцев, мягче, с дубом', serving: 'Рюмка + сангрита', price: 890, desc: 'Репосадо текила.' },
+        { name: 'Ley 925 Reposado', volume: '50 мл', ingredients: ['Текила'], allergens: [], script: 'Премиальная', serving: 'Рюмка + сангрита', price: 950, desc: 'Премиальная текила.' },
+        { name: 'Glen Moray 12 / 18', volume: '50 мл', ingredients: ['Виски'], allergens: ['Глютен'], script: 'Спейсайд, цветочно-фруктовый', serving: 'Бокал глинкерн', price: 1200, desc: 'Односолодовый виски.' },
+        { name: 'Glenmorangie Lasanta 12', volume: '50 мл', ingredients: ['Виски'], allergens: ['Глютен'], script: 'Хересная бочка, орехи, карамель', serving: 'Бокал глинкерн', price: 1150, desc: 'В хересной бочке.' },
+        { name: 'Macallan Double Cask 12', volume: '50 мл', ingredients: ['Виски'], allergens: ['Глютен'], script: 'Изюм, апельсин', serving: 'Бокал глинкерн', price: 2100, desc: 'Двойная выдержка.' },
+        { name: 'Kemlya American Oak', volume: '50 мл', ingredients: ['Виски'], allergens: ['Глютен'], script: 'Российский, 49,5%', serving: 'Бокал глинкерн', price: 950, desc: 'Российский виски.' },
+        { name: 'Chivas Regal 12', volume: '50 мл', ingredients: ['Виски'], allergens: ['Глютен'], script: 'Классика, мёд, яблоко', serving: 'Рокс', price: 890, desc: 'Купажированный виски.' },
+        { name: 'Jack Daniel\'s Old No.7', volume: '50 мл', ingredients: ['Виски'], allergens: ['Глютен'], script: 'Бурбон с карамелью', serving: 'Рокс', price: 760, desc: 'Теннесси виски.' },
+        { name: 'Doragrossa Rosolio', volume: '50 мл', ingredients: ['Ликёр'], allergens: [], script: 'Лимонный, сладкий', serving: 'Рюмка', price: 550, desc: 'Лимонный ликёр.' },
+        { name: 'Nardini Tagliatella', volume: '50 мл', ingredients: ['Ликёр'], allergens: [], script: 'Вишнёво-пряный', serving: 'Рюмка', price: 550, desc: 'Вишнёвый ликёр.' },
+        { name: 'Chiyomusubi Ultra Yuzu', volume: '50 мл', ingredients: ['Ликёр'], allergens: [], script: 'Юдзу-ликер на саке (6%)', serving: 'Рюмка', price: 600, desc: 'Юдзу на саке.' }
+      ]},
+      { id: 'distillates', title: '🥃 Дистилляты', icon: '', items: [
+        { name: 'Полба на колосках ручного сбора', volume: '50 мл', ingredients: ['Злаковый дистиллят'], allergens: ['Глютен'], script: '', serving: 'Рюмка', price: 790, desc: 'Авторский дистиллят.' },
+        { name: 'Полугар №1 Рожь и Пшеница', volume: '50 мл', ingredients: ['Хлебное вино'], allergens: ['Глютен'], script: '', serving: 'Рюмка', price: 790, desc: 'Классический полугар.' },
+        { name: 'Полугар №3 Бородинский с Тмином', volume: '50 мл', ingredients: ['Хлебное вино', 'Тмин'], allergens: ['Глютен'], script: '', serving: 'Рюмка', price: 790, desc: 'С тмином.' },
+        { name: 'Чача Фанагория 10 лет', volume: '50 мл', ingredients: ['Виноградный дистиллят'], allergens: [], script: '', serving: 'Рюмка', price: 840, desc: 'Выдержанная чача.' }
+      ]},
+      { id: 'allergens', title: '⚠️ Аллергены', icon: '⚠️', allergenTable: [
+        { name: 'Глютен', locations: 'Всё пиво, квас, виски, джин, полба, полугар' },
+        { name: 'Молоко', locations: 'Капучино, латте, матча, милкшейки, какао, раф' },
+        { name: 'Яйцо', locations: 'Абрикосовый сауэр, Киви Крыжовник смэш, Манго Маракуйя' },
+        { name: 'Орехи', locations: 'Миндальное молоко, ореховые сиропы' },
+        { name: 'Соя', locations: 'Соево-банановое молоко' },
+        { name: 'Кокос', locations: 'Кокосовое молоко' },
+        { name: 'Мёд', locations: 'Медовуха, взвары (Яблоко, Облепиха, Груша), смузи' },
+        { name: 'Сульфиты', locations: 'Сидр, вермуты в коктейлях' }
+      ], items: [] },
+      { id: 'resources', title: '🔗 Полезные ресурсы', icon: '', resources: true, items: [] },
+      { id: 'game', title: '🎮 Игра: Барный Мастер', icon: '🎮', game: true, items: [] },
+      { id: 'quiz', title: ' Тест', icon: '📝', items: [] }
     ];
 
     const quizData = [
@@ -265,40 +364,24 @@
     ];
 
     let currentSection = 'water';
-    let currentItem = null;
 
-    // === МОДАЛЬНОЕ ОКНО ===
+    // === MODAL ===
     function openModal(item) {
       const modal = document.getElementById('modalOverlay');
       const content = document.getElementById('modalContent');
-      
       content.innerHTML = `
         <h2 class="modal-title">${item.name}</h2>
         ${item.volume ? `<div class="modal-section"><div class="modal-label">Объём</div><div class="modal-content">${item.volume}</div></div>` : ''}
         ${item.price ? `<div class="modal-section"><div class="modal-label">Цена</div><div class="modal-content">${item.price} ₽</div></div>` : ''}
-        <div class="modal-section">
-          <div class="modal-label">Ингредиенты</div>
-          <div class="ingredients-list">
-            ${item.ingredients.map(ing => `<span class="ingredient-item">${ing}</span>`).join('')}
-          </div>
-        </div>
-        ${item.allergens.length ? `
-        <div class="modal-section">
-          <div class="modal-label">Аллергены</div>
-          <div class="allergen-tags">
-            ${item.allergens.map(a => `<span class="allergen-tag">${a}</span>`).join('')}
-          </div>
-        </div>` : ''}
-        ${item.description ? `<div class="modal-section"><div class="modal-label">Описание</div><div class="modal-content">${item.description}</div></div>` : ''}
-        ${item.script ? `<div class="modal-section"><div class="modal-label">Скрипт продажи</div><div class="modal-content" style="font-style:italic; background:rgba(201,169,98,0.1); padding:1rem; border-radius:8px;">${item.script}</div></div>` : ''}
+        <div class="modal-section"><div class="modal-label">Ингредиенты</div><div class="ingredients-list">${item.ingredients.map(i => `<span class="ingredient-item">${i}</span>`).join('')}</div></div>
+        ${item.allergens.length ? `<div class="modal-section"><div class="modal-label">Аллергены</div><div class="allergen-tags">${item.allergens.map(a => `<span class="allergen-tag">${a}</span>`).join('')}</div></div>` : ''}
+        ${item.desc ? `<div class="modal-section"><div class="modal-label">Описание</div><div class="modal-content">${item.desc}</div></div>` : ''}
+        ${item.script ? `<div class="modal-section"><div class="modal-label">Скрипт продажи</div><div class="modal-content" style="font-style:italic; background:rgba(201,169,98,0.1); padding:0.8rem; border-radius:8px;">${item.script}</div></div>` : ''}
         ${item.serving ? `<div class="modal-section"><div class="modal-label">Подача</div><div class="modal-content">${item.serving}</div></div>` : ''}
-        ${item.strength ? `<div class="modal-section"><div class="modal-label">Крепость</div><div class="modal-content">${item.strength}</div></div>` : ''}
       `;
-      
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeModal(e) {
       if (!e || e.target.id === 'modalOverlay') {
         document.getElementById('modalOverlay').classList.remove('active');
@@ -306,277 +389,291 @@
       }
     }
 
-    // === ИГРА ===
-    const gameItems = {
-      cocktails: {
-        'Апероль Спритц': { correct: ['🍊', '🥂', '🫧'], wrong: ['🍺', '🥃', '🍵'] },
-        'Негрони': { correct: ['🥃', '🍊', ''], wrong: ['', '', ''] },
-        'Дайкири Банан': { correct: ['🍌', '', ''], wrong: ['', '🍷', '🍵'] }
-      }
+    // === GAME ENGINE ===
+    const gameConfig = { totalRounds: 20, livesPerRound: 3, targetsPerRound: 3 };
+    const allEmojis = {
+      correct: ['🍊','🥂','🫧','🌿','🍋','','🥚','💜','','🔴','🥒','','🫐','🍷','','🍎','🍺','','🍸','🧊','','🥭','🍇','🍓','🍒','','🌸','🍄','🧅','🌶️','🥝','🍐','','🥕','🌽','','🫘','🥥','🍍','🍈',''],
+      wrong: ['','🦂','🕷️','','🔥','💣','🧨','🪓','','🗡️','️','⛏️','','🧲','🧪','','🧬','🔬','','📡','💉','','🦠','🧟','👻','👽','','🎃','🦇','🐀','🐁','🐈','🐕','🐘','','🦛','🐊','','🦎','🐢','','🦑','🦐','🦞','🦀','','🐠','🐟','','🐳','🐋','','🐊','🐅','','🦓','🦍','','🐘','🦛','','🐪','🐫','','🦘','🦬','','🐂','🐄','🐎','🐖','🐏','🐑','🦙','','🦌','🐕','','🦮','🐕🦺','🐈','🐈‍⬛','🐓','','🦤','🦚','🦜','🦢','','🕊️','','🦝','🦨','','🦫','🦦','','🐁','🐀','️','🦔']
     };
+    
+    // 20 Rounds based on TTK cocktails
+    const gameRounds = [
+      { name: 'Апероль Спритц', correct: ['🍊','','🫧'] },
+      { name: 'Мохито', correct: ['','🍋','🧊'] },
+      { name: 'Абрикосовый Сауэр', correct: ['','🥚','🍋'] },
+      { name: 'Базиликовый Джин', correct: ['🌿','🥃',''] },
+      { name: 'Смородиновый Мул', correct: ['🫐','🌿','🍋'] },
+      { name: 'Манго Маракуйя', correct: ['🥭','','🍋'] },
+      { name: 'Лавандовый Джин-Тоник', correct: ['💜','','🧊'] },
+      { name: 'Сарти Спритц', correct: ['🌹','🥂',''] },
+      { name: 'Гранат Смородина Брют', correct: ['','🌿','🥂'] },
+      { name: 'Огурец Женевер Лайм', correct: ['🥒','','🍋'] },
+      { name: 'Берёзовый Виски Коллинз', correct: ['🌲','🥃','🧊'] },
+      { name: 'Негрони', correct: ['🥃','','🥂'] },
+      { name: 'Киви Крыжовник Смэш', correct: ['🥝','','🍋'] },
+      { name: 'Дайкири Банан', correct: ['🍌','🥃',''] },
+      { name: 'Глинтвейн', correct: ['🍷','','🍎'] },
+      { name: 'Черешня Женевер', correct: ['🍒','🥃',''] },
+      { name: 'Маргарита Чинотто', correct: ['','🍋','🧊'] },
+      { name: 'Хреновуха', correct: ['🌶️','🥃',''] },
+      { name: 'Пряная Груша', correct: ['🍐','','🧊'] },
+      { name: 'Клубника Лемонграсс', correct: ['🍓','','🌿'] }
+    ];
 
     let gameState = {
-      active: false,
-      score: 0,
-      lives: 3,
-      currentOrder: null,
-      items: [],
-      speed: 2
+      active: false, round: 1, lives: 3, collected: 0,
+      items: [], loopId: null, speed: 1.5, spawnRate: 0.03,
+      areaWidth: 0, areaHeight: 0
     };
 
     function initGame() {
-      const container = document.getElementById('gameCanvas');
+      const container = document.getElementById('gameContainer');
       container.innerHTML = `
-        <div class="game-info">
-          <div class="game-order">Заказ: <span id="orderName">Нажмите Старт</span></div>
-          <div class="game-target">Соберите: <span id="targetItems">-</span></div>
+        <div class="game-header">
+          <div class="game-stat"><div class="game-stat-value" id="roundStat">1/20</div><div class="game-stat-label">Раунд</div></div>
+          <div class="game-stat"><div class="lives-display" id="livesDisplay"><span class="life">❤️</span><span class="life">❤️</span><span class="life">❤️</span></div><div class="game-stat-label">Жизни</div></div>
+          <div class="game-stat"><div class="game-stat-value" id="progressStat">0/3</div><div class="game-stat-label">Собрано</div></div>
         </div>
-        <div class="game-canvas" id="gameCanvas">
-          <div class="game-basket">🧺</div>
-          <div class="game-over" id="gameOver">
-            <h3>💀 Гость отравился!</h3>
-            <p>Вы перепутали ингредиенты</p>
-            <p>Счёт: <span id="finalScore">0</span></p>
-            <button class="btn-restart" onclick="startGame()">Ещё раз</button>
+        <div class="game-area" id="gameArea">
+          <div class="game-order-display" id="orderDisplay">Нажмите Старт</div>
+          <div class="game-progress" id="progressDots"></div>
+          <div class="game-overlay" id="gameOverlay">
+            <h3 id="overlayTitle">Барный Мастер</h3>
+            <p id="overlayText">20 заказов. 3 жизни на раунд. Лови правильные ингредиенты!</p>
+            <div class="score-display" id="scoreDisplay" style="display:none;"></div>
+            <button class="btn-game" id="overlayBtn" onclick="startGame()">Начать</button>
           </div>
         </div>
-        <div class="game-stats">
-          <div class="stat"><div class="stat-value" id="score">0</div><div class="stat-label">Счёт</div></div>
-          <div class="stat"><div class="stat-value" id="lives">❤️❤️❤️</div><div class="stat-label">Жизни</div></div>
-        </div>
-        <button class="btn-start" id="startBtn" onclick="startGame()">Начать игру</button>
       `;
+      updateGameUI();
+      showOverlay(true);
+    }
+
+    function showOverlay(show) {
+      document.getElementById('gameOverlay').classList.toggle('active', show);
     }
 
     function startGame() {
-      gameState = { active: true, score: 0, lives: 3, currentOrder: null, items: [], speed: 2 };
-      document.getElementById('gameOver').classList.remove('active');
-      document.getElementById('startBtn').style.display = 'none';
-      updateStats();
-      nextOrder();
-      gameLoop();
+      gameState = { active: true, round: 1, lives: 3, collected: 0, items: [], loopId: null, speed: 1.5, spawnRate: 0.03 };
+      const area = document.getElementById('gameArea');
+      gameState.areaWidth = area.offsetWidth;
+      gameState.areaHeight = area.offsetHeight;
+      document.getElementById('scoreDisplay').style.display = 'none';
+      document.getElementById('overlayBtn').textContent = 'Играть';
+      showOverlay(false);
+      startRound();
+      gameState.loopId = requestAnimationFrame(gameLoop);
     }
 
-    function nextOrder() {
-      const cocktails = Object.keys(gameItems.cocktails);
-      const randomCocktail = cocktails[Math.floor(Math.random() * cocktails.length)];
-      gameState.currentOrder = {
-        name: randomCocktail,
-        ...gameItems.cocktails[randomCocktail]
-      };
-      document.getElementById('orderName').textContent = gameState.currentOrder.name;
-      document.getElementById('targetItems').textContent = gameState.currentOrder.correct.join(' + ');
+    function startRound() {
+      if (gameState.round > gameConfig.totalRounds) { endGame(true); return; }
+      gameState.lives = gameConfig.livesPerRound;
+      gameState.collected = 0;
+      gameState.items.forEach(el => el.remove());
+      gameState.items = [];
+      gameState.spawnRate = 0.03 + (gameState.round * 0.005);
+      gameState.speed = 1.5 + (gameState.round * 0.15);
+      updateGameUI();
+      const roundData = gameRounds[gameState.round - 1];
+      document.getElementById('orderDisplay').textContent = ` ${roundData.name}`;
+      renderProgressDots();
+    }
+
+    function renderProgressDots() {
+      const container = document.getElementById('progressDots');
+      container.innerHTML = '';
+      for (let i = 0; i < gameConfig.targetsPerRound; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot' + (i < gameState.collected ? ' filled' : '');
+        container.appendChild(dot);
+      }
     }
 
     function spawnItem() {
-      const canvas = document.querySelector('.game-canvas');
-      const isCorrect = Math.random() > 0.5;
-      const items = isCorrect ? gameState.currentOrder.correct : gameState.currentOrder.wrong;
-      const emoji = items[Math.floor(Math.random() * items.length)];
-      
+      if (Math.random() > gameState.spawnRate) return;
+      const roundData = gameRounds[gameState.round - 1];
+      const isCorrect = Math.random() < 0.35;
+      let emoji;
+      if (isCorrect) {
+        emoji = roundData.correct[Math.floor(Math.random() * roundData.correct.length)];
+      } else {
+        emoji = allEmojis.wrong[Math.floor(Math.random() * allEmojis.wrong.length)];
+      }
+
       const el = document.createElement('div');
-      el.className = 'game-item';
+      el.className = 'falling-emoji';
       el.textContent = emoji;
-      el.style.left = Math.random() * (canvas.offsetWidth - 50) + 'px';
-      el.style.top = '-50px';
       el.dataset.correct = isCorrect;
-      el.onclick = () => catchItem(el);
+      const x = Math.random() * (gameState.areaWidth - 50);
+      el.style.left = x + 'px';
+      el.style.top = '-50px';
       
-      canvas.appendChild(el);
-      gameState.items.push(el);
+      const handleCatch = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        catchItem(el);
+      };
+      el.addEventListener('click', handleCatch);
+      el.addEventListener('touchstart', handleCatch, {passive: false});
+      
+      document.getElementById('gameArea').appendChild(el);
+      gameState.items.push({ el, y: -50, x, speed: gameState.speed + (Math.random() * 0.5 - 0.25) });
     }
 
-    function catchItem(el) {
-      if (!gameState.active) return;
+    function catchItem(itemObj) {
+      if (!gameState.active || !itemObj.el.parentNode) return;
+      const isCorrect = itemObj.el.dataset.correct === 'true';
       
-      const isCorrect = el.dataset.correct === 'true';
       if (isCorrect) {
-        gameState.score += 10;
-        el.remove();
-        gameState.items = gameState.items.filter(i => i !== el);
-        
-        // Проверка на собран коктейль
-        const collected = document.querySelectorAll('.game-item[data-collected="true"]').length;
-        if (collected >= gameState.currentOrder.correct.length) {
-          gameState.score += 50;
-          setTimeout(nextOrder, 500);
+        itemObj.el.classList.add('correct-caught');
+        gameState.collected++;
+        updateGameUI();
+        if (gameState.collected >= gameConfig.targetsPerRound) {
+          setTimeout(() => {
+            gameState.round++;
+            startRound();
+          }, 400);
         }
       } else {
+        itemObj.el.classList.add('wrong-caught');
         gameState.lives--;
-        el.style.background = 'rgba(244,67,54,0.5)';
-        setTimeout(() => {
-          el.remove();
-          gameState.items = gameState.items.filter(i => i !== el);
-        }, 300);
-        
+        updateGameUI();
         if (gameState.lives <= 0) {
-          gameOver();
+          setTimeout(() => endGame(false), 400);
         }
       }
-      updateStats();
-    }
-
-    function gameOver() {
-      gameState.active = false;
-      document.getElementById('finalScore').textContent = gameState.score;
-      document.getElementById('gameOver').classList.add('active');
-      document.getElementById('startBtn').style.display = 'inline-block';
-      document.getElementById('startBtn').textContent = 'Играть снова';
-    }
-
-    function updateStats() {
-      document.getElementById('score').textContent = gameState.score;
-      document.getElementById('lives').textContent = '❤️'.repeat(gameState.lives);
+      
+      setTimeout(() => {
+        if (itemObj.el.parentNode) itemObj.el.remove();
+        gameState.items = gameState.items.filter(i => i !== itemObj);
+      }, 400);
     }
 
     function gameLoop() {
       if (!gameState.active) return;
+      spawnItem();
       
-      if (Math.random() < 0.02) spawnItem();
-      
-      gameState.items.forEach(el => {
-        const top = parseFloat(el.style.top);
-        if (top > 450) {
-          el.remove();
-          gameState.items = gameState.items.filter(i => i !== el);
-        } else {
-          el.style.top = (top + gameState.speed) + 'px';
+      const areaH = gameState.areaHeight;
+      gameState.items.forEach((item, idx) => {
+        item.y += item.speed;
+        item.el.style.top = item.y + 'px';
+        if (item.y > areaH) {
+          item.el.remove();
+          gameState.items.splice(idx, 1);
         }
       });
       
-      requestAnimationFrame(gameLoop);
+      gameState.loopId = requestAnimationFrame(gameLoop);
     }
 
-    // === РЕНДЕР ===
+    function updateGameUI() {
+      document.getElementById('roundStat').textContent = `${gameState.round}/20`;
+      document.getElementById('progressStat').textContent = `${gameState.collected}/${gameConfig.targetsPerRound}`;
+      const livesContainer = document.getElementById('livesDisplay');
+      livesContainer.innerHTML = '';
+      for (let i = 0; i < gameConfig.livesPerRound; i++) {
+        const span = document.createElement('span');
+        span.className = 'life' + (i >= gameState.lives ? ' lost' : '');
+        span.textContent = '❤️';
+        livesContainer.appendChild(span);
+      }
+      renderProgressDots();
+    }
+
+    function endGame(win) {
+      gameState.active = false;
+      cancelAnimationFrame(gameState.loopId);
+      gameState.items.forEach(i => i.el.remove());
+      gameState.items = [];
+      
+      document.getElementById('overlayTitle').textContent = win ? ' Смена окончена!' : '💀 Гость отравился!';
+      document.getElementById('overlayText').textContent = win 
+        ? `Вы успешно обслужили все 20 заказов! Мастер-бармен!` 
+        : `Вы допустили слишком много ошибок в раунде ${gameState.round}. Попробуйте снова!`;
+      
+      const scoreDisplay = document.getElementById('scoreDisplay');
+      scoreDisplay.style.display = 'block';
+      scoreDisplay.textContent = win ? ' ПРОЙДЕНО' : `Раунд: ${gameState.round}/20`;
+      
+      document.getElementById('overlayBtn').textContent = 'Играть снова';
+      showOverlay(true);
+    }
+
+    // === RENDER SECTIONS ===
     function renderNav() {
-      const nav = document.getElementById('navTabs');
-      nav.innerHTML = menuData.map(section => `
-        <button class="tab-btn ${section.id === currentSection ? 'active' : ''}" 
-                onclick="showSection('${section.id}')">
-          ${section.icon || '📋'} ${section.title.replace(/^[^\s]+ /, '')}
-        </button>
-      `).join('');
+      document.getElementById('navTabs').innerHTML = menuData.map(s => 
+        `<button class="tab-btn ${s.id===currentSection?'active':''}" onclick="showSection('${s.id}')">${s.icon} ${s.title.replace(/^[^\s]+ /,'')}</button>`
+      ).join('');
     }
 
     function showSection(id) {
       currentSection = id;
       renderNav();
       renderContent();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({top:0, behavior:'smooth'});
     }
 
     function renderContent() {
       const main = document.getElementById('mainContent');
-      const section = menuData.find(s => s.id === currentSection);
-      if (!section) return;
+      const s = menuData.find(x => x.id === currentSection);
+      if (!s) return;
 
-      if (section.game) {
-        main.innerHTML = `
-          <h2 class="section-title">${section.title}</h2>
-          <div class="game-container" id="gameContainer"></div>
-        `;
-        setTimeout(initGame, 100);
+      if (s.game) {
+        main.innerHTML = `<h2 class="section-title">${s.title}</h2><div class="game-wrapper" id="gameContainer"></div>`;
+        initGame();
         return;
       }
 
-      if (section.id === 'allergens') {
-        main.innerHTML = `
-          <h2 class="section-title">${section.title}</h2>
-          <div class="allergen-table">
-            ${section.allergenTable.map(a => `
-              <div class="allergen-row">
-                <div class="allergen-name">⚠️ ${a.name}</div>
-                <div class="allergen-locations">${a.locations}</div>
-              </div>
-            `).join('')}
-          </div>
-        `;
+      if (s.id === 'allergens') {
+        main.innerHTML = `<h2 class="section-title">${s.title}</h2><div class="allergen-table">${s.allergenTable.map(a=>`<div class="allergen-row"><div class="allergen-name">⚠️ ${a.name}</div><div class="allergen-locations">${a.locations}</div></div>`).join('')}</div>
+        <div class="story-card" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-top:1.5rem;"><h3 class="story-title" style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--accent);margin-bottom:1rem;">📌 Алгоритм действий при аллергии:</h3><ul class="story-list" style="list-style:none;padding:0;"><li style="padding:0.8rem 0;padding-left:2rem;position:relative;color:var(--text-secondary);">1. Поблагодарить и уточнить аллерген</li><li style="padding:0.8rem 0;padding-left:2rem;position:relative;color:var(--text-secondary);">2. Сказать: <span style="background:rgba(201,169,98,0.15);padding:0.2rem 0.5rem;border-radius:4px;color:var(--accent);">«Я сейчас проверю у бармена безопасные позиции. Минуту»</span></li><li style="padding:0.8rem 0;padding-left:2rem;position:relative;color:var(--text-secondary);">3. Никогда не гадать!</li></ul></div>`;
         return;
       }
 
-      if (section.resources) {
-        main.innerHTML = `
-          <h2 class="section-title">${section.title}</h2>
-          <div class="resources-grid">
-            <div class="resource-card">
-              <h3 class="resource-title">📚 WikiBarista</h3>
-              <a href="https://wikibarista.ru" class="resource-link" target="_blank">Энциклопедия бармена →</a>
-            </div>
-            <div class="resource-card">
-              <h3 class="resource-title">🍸 Cocktail DB</h3>
-              <a href="https://www.thecocktaildb.com" class="resource-link" target="_blank">База коктейлей →</a>
-            </div>
-            <div class="resource-card">
-              <h3 class="resource-title">🎓 Barista Hustle</h3>
-              <a href="https://www.baristahustle.com" class="resource-link" target="_blank">Обучение бариста →</a>
-            </div>
-            <div class="resource-card">
-              <h3 class="resource-title">📖 Аллергены в еде</h3>
-              <a href="https://allergen.ru" class="resource-link" target="_blank">Справочник аллергенов →</a>
-            </div>
-          </div>
-        `;
+      if (s.resources) {
+        main.innerHTML = `<h2 class="section-title">${s.title}</h2><div class="resources-grid">
+          <div class="resource-card"><h3 class="resource-title">📚 WikiBarista</h3><a href="https://wikibarista.ru" class="resource-link" target="_blank">Энциклопедия бармена →</a></div>
+          <div class="resource-card"><h3 class="resource-title">🍸 Cocktail DB</h3><a href="https://www.thecocktaildb.com" class="resource-link" target="_blank">База коктейлей →</a></div>
+          <div class="resource-card"><h3 class="resource-title">🎓 Barista Hustle</h3><a href="https://www.baristahustle.com" class="resource-link" target="_blank">Обучение бариста →</a></div>
+          <div class="resource-card"><h3 class="resource-title">📖 Аллергены</h3><a href="https://allergen.ru" class="resource-link" target="_blank">Справочник →</a></div>
+        </div>`;
         return;
       }
 
-      if (section.id === 'quiz') {
-        renderQuiz(main);
+      if (s.id === 'quiz') {
+        main.innerHTML = `<h2 class="section-title">${s.title}</h2><div style="max-width:800px;margin:0 auto;">${quizData.map((q,i)=>`
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;margin-bottom:1rem;" data-q="${i}">
+            <div style="font-weight:600;margin-bottom:0.8rem;color:var(--text-primary);">${i+1}. ${q.q}</div>
+            <div style="display:grid;gap:0.5rem;">${q.options.map((o,j)=>`<button style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:0.8rem;color:var(--text-primary);cursor:pointer;text-align:left;font-family:inherit;transition:0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" onclick="answerQuiz(this,${i},${j},${q.correct})">${o}</button>`).join('')}</div>
+            <div style="margin-top:0.8rem;padding:0.8rem;background:rgba(201,169,98,0.1);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:0.9rem;color:var(--text-secondary);display:none;" id="ex-${i}">💡 ${q.explain}</div>
+          </div>`).join('')}</div>`;
         return;
       }
 
-      main.innerHTML = `
-        <h2 class="section-title">${section.title}</h2>
-        <div class="menu-grid">
-          ${section.items.map(item => `
-            <div class="menu-card" onclick='openModal(${JSON.stringify(item)})'>
-              <div class="card-header">
-                <h3 class="card-title">${item.name}</h3>
-                ${item.volume ? `<span class="card-volume">${item.volume}</span>` : ''}
-              </div>
-              <div class="card-ingredients">${item.ingredients.join(', ')}</div>
-              ${item.allergens.length ? `<div class="allergen-tags">${item.allergens.map(a => `<span class="allergen-tag">${a}</span>`).join('')}</div>` : ''}
-              ${item.script ? `<div class="script-box"><span class="script-label">💬 Скрипт</span>${item.script}</div>` : ''}
-              ${item.price ? `<div class="price"><span class="price-value">${item.price} ₽</span></div>` : ''}
-            </div>
-          `).join('')}
-        </div>
-      `;
+      main.innerHTML = `<h2 class="section-title">${s.title}</h2><div class="menu-grid">${s.items.map(it=>`
+        <div class="menu-card" onclick='openModal(${JSON.stringify(it).replace(/'/g,"&#39;")})'>
+          <div class="card-header"><h3 class="card-title">${it.name}</h3>${it.volume?`<span class="card-volume">${it.volume}</span>`:''}</div>
+          <div class="card-ingredients">${it.ingredients.join(', ')}</div>
+          ${it.allergens.length?`<div class="allergen-tags">${it.allergens.map(a=>`<span class="allergen-tag">${a}</span>`).join('')}</div>`:''}
+          ${it.script?`<div class="script-box"><span class="script-label">💬 Скрипт</span>${it.script}</div>`:''}
+          ${it.price?`<div class="price"><span class="price-value">${it.price} ₽</span></div>`:''}
+        </div>`).join('')}</div>`;
     }
 
-    function renderQuiz(container) {
-      container.innerHTML = `
-        <h2 class="section-title">${menuData.find(s => s.id === 'quiz').title}</h2>
-        <div class="quiz-container">
-          ${quizData.map((q, idx) => `
-            <div class="quiz-question" data-question="${idx}">
-              <div class="question-number">Вопрос ${idx + 1}</div>
-              <div class="question-text">${q.q}</div>
-              <div class="quiz-options">
-                ${q.options.map((opt, i) => `<div class="quiz-option" onclick="answerQuestion(${idx}, ${i}, this)">${opt}</div>`).join('')}
-              </div>
-              <div class="explanation hidden" id="explain-${idx}">💡 ${q.explain}</div>
-            </div>
-          `).join('')}
-        </div>
-      `;
+    function answerQuiz(btn, qIdx, aIdx, correctIdx) {
+      const parent = btn.parentElement;
+      if (parent.classList.contains('answered')) return;
+      parent.classList.add('answered');
+      Array.from(parent.children).forEach((b,i) => {
+        b.style.pointerEvents = 'none';
+        b.style.borderColor = i===correctIdx ? 'var(--success)' : (i===aIdx ? 'var(--error)' : 'var(--border)');
+        b.style.background = i===correctIdx ? 'rgba(76,175,80,0.2)' : (i===aIdx ? 'rgba(244,67,54,0.2)' : 'var(--bg-secondary)');
+        b.style.color = i===correctIdx || i===aIdx ? 'var(--text-primary)' : 'var(--text-secondary)';
+      });
+      document.getElementById(`ex-${qIdx}`).style.display = 'block';
     }
 
-    function answerQuestion(qIdx, aIdx, el) {
-      const q = document.querySelector(`[data-question="${qIdx}"]`);
-      const opts = q.querySelectorAll('.quiz-option');
-      const correct = quizData[qIdx].correct;
-      
-      opts.forEach(o => o.classList.add('answered'));
-      if (aIdx === correct) el.classList.add('correct');
-      else el.classList.add('wrong');
-      
-      document.getElementById(`explain-${qIdx}`).classList.remove('hidden');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      renderNav();
-      renderContent();
-    });
+    document.addEventListener('DOMContentLoaded', () => { renderNav(); renderContent(); });
   </script>
 </body>
 </html>
