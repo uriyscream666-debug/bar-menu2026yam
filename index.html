@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Барная карта 2026 | Трактир / Шахерезада</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -16,1917 +15,308 @@
       --text-secondary: #b0b0b0;
       --accent: #c9a962;
       --accent-hover: #b8984d;
-      --accent-light: #e0c98a;
       --border: #2a2a2a;
       --success: #4caf50;
       --error: #f44336;
-      --warning: #ff9800;
       --radius: 12px;
       --shadow: 0 8px 32px rgba(0,0,0,0.4);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+    
     /* Header */
-    .hero {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-      padding: 3rem 1rem 2rem;
-      text-align: center;
-      border-bottom: 2px solid var(--accent);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '✦';
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: var(--accent);
-      font-size: 2rem;
-      opacity: 0.3;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      letter-spacing: 2px;
-    }
-
-    .hero p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      font-weight: 300;
-    }
-
-    /* Golden Rules */
-    .golden-rules {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-      color: #000;
-      padding: 1.5rem 1rem;
-      text-align: center;
-    }
-
-    .golden-rules h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .rule-item {
-      background: rgba(255,255,255,0.1);
-      padding: 1rem;
-      border-radius: var(--radius);
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-
-    .rule-number {
-      font-weight: 700;
-      font-size: 1.2rem;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 3rem 1rem 2rem; text-align: center; border-bottom: 2px solid var(--accent); }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem; letter-spacing: 2px; }
+    .hero p { color: var(--text-secondary); font-size: 0.95rem; }
+    
+    /* Rules */
+    .golden-rules { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%); color: #000; padding: 1.5rem 1rem; text-align: center; }
+    .golden-rules h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600; }
+    .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto; }
+    .rule-item { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: var(--radius); font-weight: 500; font-size: 0.9rem; }
+    .rule-number { font-weight: 700; font-size: 1.2rem; display: block; margin-bottom: 0.3rem; }
+    
     /* Navigation */
-    .nav-container {
-      position: sticky;
-      top: 0;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      box-shadow: var(--shadow);
-    }
-
-    .nav-tabs {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-      padding: 1rem;
-      scrollbar-width: thin;
-      scrollbar-color: var(--accent) var(--bg-secondary);
-    }
-
-    .nav-tabs::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .nav-tabs::-webkit-scrollbar-track {
-      background: var(--bg-secondary);
-    }
-
-    .nav-tabs::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 3px;
-    }
-
-    .tab-btn {
-      flex: 0 0 auto;
-      padding: 0.7rem 1.2rem;
-      background: transparent;
-      color: var(--text-secondary);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
-
-    .tab-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .tab-btn.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* Main Content */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      text-align: center;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    /* Menu Grid */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .menu-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .menu-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: var(--accent);
-    }
-
-    .menu-card:hover::before {
-      opacity: 1;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.8rem;
-      gap: 1rem;
-    }
-
-    .card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .card-volume {
-      background: var(--accent);
-      color: #000;
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .card-ingredients {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
-      line-height: 1.5;
-    }
-
-    .allergen-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .allergen-tag {
-      background: rgba(244, 67, 54, 0.15);
-      color: #ff6b6b;
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      border: 1px solid rgba(244, 67, 54, 0.3);
-    }
-
-    .allergen-tag.safe {
-      background: rgba(76, 175, 80, 0.15);
-      color: #66bb6a;
-      border-color: rgba(76, 175, 80, 0.3);
-    }
-
-    .script-box {
-      background: rgba(201, 169, 98, 0.1);
-      border-left: 3px solid var(--accent);
-      padding: 0.8rem 1rem;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      font-style: italic;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      margin-top: 0.8rem;
-    }
-
-    .script-label {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.3rem;
-      display: block;
-    }
-
-    .serving-info {
-      margin-top: 0.8rem;
-      padding-top: 0.8rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    .serving-label {
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    /* Quiz Section */
-    .quiz-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .quiz-question {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .question-number {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .question-text {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .quiz-options {
-      display: grid;
-      gap: 0.8rem;
-    }
-
-    .quiz-option {
-      background: var(--bg-secondary);
-      border: 2px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      font-size: 0.95rem;
-    }
-
-    .quiz-option:hover:not(.answered) {
-      border-color: var(--accent);
-      background: rgba(201, 169, 98, 0.1);
-    }
-
-    .quiz-option.correct {
-      background: rgba(76, 175, 80, 0.2);
-      border-color: var(--success);
-      color: #81c784;
-    }
-
-    .quiz-option.wrong {
-      background: rgba(244, 67, 54, 0.2);
-      border-color: var(--error);
-      color: #e57373;
-    }
-
-    .quiz-option.answered {
-      cursor: not-allowed;
-      opacity: 0.8;
-    }
-
-    .explanation {
-      margin-top: 1rem;
-      padding: 1rem;
-      background: rgba(201, 169, 98, 0.1);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    .quiz-result {
-      text-align: center;
-      padding: 2rem;
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      margin-top: 2rem;
-      border: 2px solid var(--accent);
-    }
-
-    .result-score {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      color: var(--accent);
-      margin: 1rem 0;
-    }
-
-    .result-message {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn-restart {
-      background: var(--accent);
-      color: #000;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: all 0.3s;
-    }
-
-    .btn-restart:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-
-    /* Allergen Table */
-    .allergen-table {
-      background: var(--bg-card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .allergen-row {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      gap: 1rem;
-    }
-
-    .allergen-row:last-child {
-      border-bottom: none;
-    }
-
-    .allergen-name {
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .allergen-locations {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    /* Storytelling Section */
-    .story-card {
-      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .story-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .story-list {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .story-list li {
-      padding: 0.8rem 0;
-      padding-left: 2rem;
-      position: relative;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .story-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: bold;
-    }
-
-    .highlight-phrase {
-      background: rgba(201, 169, 98, 0.15);
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      color: var(--accent-light);
-      font-weight: 500;
-    }
-
-    /* Price Table */
-    .price-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 1.5rem;
-    }
-
-    .price-table th,
-    .price-table td {
-      padding: 1rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .price-table th {
-      background: var(--bg-secondary);
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-    }
-
-    .price-table tr:hover {
-      background: rgba(201, 169, 98, 0.05);
-    }
-
-    .price-value {
-      font-weight: 600;
-      color: var(--accent);
-      white-space: nowrap;
-    }
-
-    /* Hidden */
-    .hidden {
-      display: none !important;
-    }
-
-    /* Responsive */
+    .nav-container { position: sticky; top: 0; background: var(--bg-secondary); border-bottom: 1px solid var(--border); z-index: 100; box-shadow: var(--shadow); }
+    .nav-tabs { display: flex; gap: 0.5rem; overflow-x: auto; padding: 1rem; scrollbar-width: thin; }
+    .tab-btn { flex: 0 0 auto; padding: 0.7rem 1.2rem; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 50px; cursor: pointer; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; white-space: nowrap; }
+    .tab-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .tab-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 600; }
+    
+    /* Content */
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; text-align: center; position: relative; padding-bottom: 0.5rem; }
+    .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: var(--accent); }
+    
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .menu-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+    .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--accent); }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; gap: 1rem; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); }
+    .card-volume { background: var(--accent); color: #000; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+    .card-ingredients { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.8rem; line-height: 1.5; }
+    
+    .allergen-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
+    .allergen-tag { background: rgba(244, 67, 54, 0.15); color: #ff6b6b; padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.75rem; font-weight: 500; border: 1px solid rgba(244, 67, 54, 0.3); }
+    .allergen-tag.safe { background: rgba(76, 175, 80, 0.15); color: #66bb6a; border-color: rgba(76, 175, 80, 0.3); }
+    
+    .script-box { background: rgba(201, 169, 98, 0.1); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; border-radius: 0 var(--radius) var(--radius) 0; font-style: italic; color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.8rem; }
+    .script-label { color: var(--accent); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.3rem; display: block; }
+    
+    .serving-info { margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-secondary); }
+    .serving-label { font-weight: 600; color: var(--accent); }
+    .price { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border); text-align: right; }
+    .price-value { font-size: 1.3rem; font-weight: 700; color: var(--accent); }
+    
+    /* Quiz & Allergens */
+    .quiz-container { max-width: 800px; margin: 0 auto; }
+    .quiz-question { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .question-number { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .question-text { font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary); }
+    .quiz-options { display: grid; gap: 0.8rem; }
+    .quiz-option { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); padding: 1rem; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
+    .quiz-option:hover:not(.answered) { border-color: var(--accent); background: rgba(201, 169, 98, 0.1); }
+    .quiz-option.correct { background: rgba(76, 175, 80, 0.2); border-color: var(--success); color: #81c784; }
+    .quiz-option.wrong { background: rgba(244, 67, 54, 0.2); border-color: var(--error); color: #e57373; }
+    .quiz-option.answered { cursor: not-allowed; opacity: 0.8; }
+    .explanation { margin-top: 1rem; padding: 1rem; background: rgba(201, 169, 98, 0.1); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; font-size: 0.9rem; color: var(--text-secondary); }
+    
+    .quiz-result { text-align: center; padding: 2rem; background: var(--bg-card); border-radius: var(--radius); margin-top: 2rem; border: 2px solid var(--accent); }
+    .result-score { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--accent); margin: 1rem 0; }
+    .result-message { font-size: 1.2rem; margin-bottom: 1rem; }
+    .btn-restart { background: var(--accent); color: #000; border: none; padding: 1rem 2rem; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 600; cursor: pointer; margin-top: 1rem; transition: all 0.3s; }
+    .btn-restart:hover { background: var(--accent-hover); transform: translateY(-2px); }
+    
+    .allergen-table { background: var(--bg-card); border-radius: var(--radius); overflow: hidden; margin-bottom: 2rem; }
+    .allergen-row { display: grid; grid-template-columns: 1fr 2fr; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); gap: 1rem; }
+    .allergen-row:last-child { border-bottom: none; }
+    .allergen-name { font-weight: 600; color: var(--accent); }
+    .allergen-locations { color: var(--text-secondary); font-size: 0.9rem; }
+    
+    .story-card { background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; }
+    .story-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; }
+    .story-list { list-style: none; padding-left: 0; }
+    .story-list li { padding: 0.8rem 0; padding-left: 2rem; position: relative; color: var(--text-secondary); line-height: 1.6; }
+    .story-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+    .highlight-phrase { background: rgba(201, 169, 98, 0.15); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--accent); font-weight: 500; }
+    
+    .hidden { display: none !important; }
+    
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.5rem;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .allergen-row {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-      }
-
-      .price-table {
-        font-size: 0.9rem;
-      }
-
-      .price-table th,
-      .price-table td {
-        padding: 0.8rem 0.5rem;
-      }
-    }
-
-    /* Loading */
-    .loading {
-      text-align: center;
-      padding: 3rem;
-      color: var(--text-secondary);
-    }
-
-    .loading::after {
-      content: '';
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 3px solid var(--border);
-      border-top-color: var(--accent);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-top: 1rem;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 0.85rem;
+      .hero h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.5rem; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .allergen-row { grid-template-columns: 1fr; gap: 0.5rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
   <header class="hero">
     <h1>✦ БАРНАЯ КАРТА 2026 ✦</h1>
     <p>Трактир / Шахерезада • Летнее меню</p>
   </header>
 
-  <!-- Golden Rules -->
   <section class="golden-rules">
     <h3>🎯 3 золотых правила продажи</h3>
     <div class="rules-grid">
-      <div class="rule-item">
-        <span class="rule-number">1</span>
-        Знай, что внутри – из этого пособия
-      </div>
-      <div class="rule-item">
-        <span class="rule-number">2</span>
-        Аллергены – если не уверен: «Уточню у бармена, одну минуту»
-      </div>
-      <div class="rule-item">
-        <span class="rule-number">3</span>
-        Предлагай повторить, когда у гостя осталась 1/3 бокала
-      </div>
+      <div class="rule-item"><span class="rule-number">1</span>Знай, что внутри – из этого пособия</div>
+      <div class="rule-item"><span class="rule-number">2</span>Аллергены – если не уверен: «Уточню у бармена, одну минуту»</div>
+      <div class="rule-item"><span class="rule-number">3</span>Предлагай повторить, когда у гостя осталась 1/3 бокала</div>
     </div>
   </section>
 
-  <!-- Navigation -->
   <nav class="nav-container">
     <div class="nav-tabs" id="navTabs"></div>
   </nav>
 
-  <!-- Main Content -->
   <main class="container" id="mainContent"></main>
 
-  <!-- Footer -->
-  <footer>
+  <footer style="text-align:center; padding:2rem 1rem; background:var(--bg-secondary); border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem;">
     <p>© 2026 Трактир / Шахерезада • Учебное пособие для официантов</p>
   </footer>
 
   <script>
-    // Complete menu data from PDFs
+    // === ДАННЫЕ МЕНЮ ===
     const menuData = [
-      // WATER
       {
-        id: 'water',
-        title: '💧 Минеральная вода',
-        icon: '💧',
+        id: 'water', title: '💧 Минеральная вода', icon: '',
         items: [
-          {
-            name: 'Байкал',
-            volume: '530 мл',
-            ingredients: 'Газированная / Не газированная',
-            allergens: [],
-            script: '«Мягкая столовая вода – отлично утоляет жажду»',
-            serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол',
-            price: 390
-          },
-          {
-            name: 'Недра',
-            volume: '750 мл',
-            ingredients: 'Газированная / Не газированная',
-            allergens: [],
-            script: '«Премиальная российская вода из Новгородской области»',
-            serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол',
-            price: 610
-          },
-          {
-            name: 'Боржоми',
-            volume: '500 мл (стекло)',
-            ingredients: 'Минеральная лечебно-столовая',
-            allergens: [],
-            script: '«Легендарная грузинская вода, помогает пищеварению»',
-            serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол',
-            price: 450
-          }
+          { name: 'Байкал', volume: '530 мл', ingredients: 'Газированная / Не газированная', allergens: [], script: '«Мягкая столовая вода – отлично утоляет жажду»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 390 },
+          { name: 'Недра', volume: '750 мл', ingredients: 'Газированная / Не газированная', allergens: [], script: '«Премиальная российская вода из Новгородской области»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 610 },
+          { name: 'Боржоми', volume: '500 мл', ingredients: 'Минеральная лечебно-столовая', allergens: [], script: '«Легендарная грузинская вода, помогает пищеварению»', serving: 'Бутылка открывается при госте, наливается в охлаждённый хайбол', price: 450 }
         ]
       },
-
-      // NON-ALCOHOLIC
       {
-        id: 'non-alcoholic',
-        title: '🥤 Безалкогольные напитки',
-        icon: '🥤',
+        id: 'non-alc', title: '🥤 Безалкогольное', icon: '🥤',
         items: [
-          {
-            name: 'Сок ВИЗ',
-            volume: '200 мл',
-            ingredients: 'Апельсин / Яблоко / Томат / Вишня',
-            allergens: [],
-            script: '«Натуральные соки премиум качества»',
-            serving: 'Стакан хайбол, трубочка',
-            price: 380
-          },
-          {
-            name: 'Свежевыжатый сок',
-            volume: '200 мл',
-            ingredients: 'Апельсин / Грейпфрут / Яблоко / Морковь',
-            allergens: [],
-            script: '«Выжимаем по заказу – максимум витаминов»',
-            serving: 'Стакан хайбол, трубочка',
-            price: 460
-          },
-          {
-            name: 'Кока-Кола / Фанта / Спрайт',
-            volume: '250 мл',
-            ingredients: 'Газированные напитки',
-            allergens: [],
-            script: 'Классика',
-            serving: 'Стакан со льдом',
-            price: 360
-          },
-          {
-            name: 'Тоник',
-            volume: '200 мл',
-            ingredients: 'Классический / Имбирный',
-            allergens: [],
-            script: '«Имбирный эль – пикантный, жгучий. Идеально к джину»',
-            serving: 'Стакан со льдом и лаймом',
-            price: 370
-          },
-          {
-            name: 'Морс',
-            volume: '200 мл',
-            ingredients: 'Смородина / Клюква / Облепиха',
-            allergens: [],
-            script: '«Домашний морс из настоящих ягод»',
-            serving: 'Стакан со льдом',
-            price: 300
-          },
-          {
-            name: 'Квас домашний / Вишнёвый',
-            volume: '250 мл',
-            ingredients: 'Вода, сусло (ячмень), сахар, дрожжи, изюм',
-            allergens: ['Глютен'],
-            script: '«Наш квас – живой, нефильтрованный, с хлебным ароматом»',
-            serving: 'Стакан со льдом',
-            price: 350
-          },
-          {
-            name: 'Медовуха',
-            volume: '250 мл',
-            ingredients: 'Мёд, дрожжи, изюм, вода',
-            allergens: ['Мёд'],
-            script: '«Старинный напиток на мёду – пьётся легко»',
-            serving: 'Стакан со льдом',
-            price: 400
-          }
+          { name: 'Сок ВИЗ', volume: '0,2 л', ingredients: 'Апельсин, яблоко, томат, вишня', allergens: [], script: '', serving: 'Стакан хайбол, трубочка', price: 380 },
+          { name: 'Свежевыжатый сок', volume: '0,2 л', ingredients: 'Апельсин, грейпфрут, яблоко, морковь, сельдерей', allergens: [], script: '«Выжимаем по заказу – максимум витаминов»', serving: 'Стакан хайбол, трубочка', price: 460 },
+          { name: 'Кока-Кола / Фанта / Спрайт', volume: '0,25 л', ingredients: '', allergens: [], script: '', serving: 'Стакан со льдом', price: 360 },
+          { name: 'Тоник', volume: '0,2 л', ingredients: 'Классический / Имбирный', allergens: [], script: '«Имбирный эль – пикантный, жгучий. Идеально к джину»', serving: 'Стакан со льдом и лаймом', price: 370 },
+          { name: 'Морс', volume: '0,2 л', ingredients: 'Смородина / Клюква / Облепиха', allergens: [], script: '«Домашний морс из настоящих ягод»', serving: 'Стакан со льдом', price: 300 },
+          { name: 'Квас домашний / Вишнёвый', volume: '0,25 л', ingredients: 'Вода, сусло (ячмень), сахар, дрожжи, изюм, вишня', allergens: ['Глютен'], script: '«Наш квас – живой, нефильтрованный, с хлебным ароматом»', serving: 'Стакан со льдом', price: 300 },
+          { name: 'Медовуха', volume: '0,25 л', ingredients: 'Мёд, дрожжи, изюм, вода', allergens: ['Мёд'], script: '«Старинный напиток на мёду – пьётся легко»', serving: 'Стакан со льдом', price: 400 }
         ]
       },
-
-      // LEMONADES
       {
-        id: 'lemonades',
-        title: '🍋 Домашние лимонады',
-        icon: '🍋',
+        id: 'lemonades', title: ' Домашние лимонады', icon: '🍋',
         items: [
-          {
-            name: 'Райхон',
-            volume: '300 мл',
-            ingredients: 'Настой фиолетового базилика, сахар, лимонная кислота, газировка',
-            allergens: [],
-            script: '«С ароматом свежего базилика»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Тархун',
-            volume: '300 мл',
-            ingredients: 'Экстракт эстрагона, лимон, сахар, газировка, лайм',
-            allergens: [],
-            script: '«Натуральный тархун – вкус из детства»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Мандариновый',
-            volume: '300 мл',
-            ingredients: 'Пюре мандаринов, юдзу, фруктозный сироп, газировка, мармеладные шарики',
-            allergens: [],
-            script: '«Солнечный, с кислинкой юдзу»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Имбирь мёд лимон',
-            volume: '300 мл',
-            ingredients: 'Имбирный сок, мёд, лайм, газировка',
-            allergens: ['Мёд'],
-            script: '«Имбирный лимонад с мёдом – согревает»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Смородина Иван-Чай',
-            volume: '300 мл',
-            ingredients: 'Пюре чёрной смородины, отвар иван-чая, газировка, свежие ягоды',
-            allergens: [],
-            script: '«Таёжный вкус: ягоды + травы»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Манго Маракуйя Кокос',
-            volume: '300 мл',
-            ingredients: 'Пюре манго, маракуйя, кокосовое молоко, газировка, мармеладные шарики',
-            allergens: ['Кокос'],
-            script: '«Тропический взрыв – самый популярный»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Огурец и мята',
-            volume: '300 мл',
-            ingredients: 'Огуречный сок, мята, лайм, газировка',
-            allergens: [],
-            script: '«Лёгкий, как глоток родниковой воды»',
-            serving: 'Высокий стакан со льдом',
-            price: 460
-          },
-          {
-            name: 'Лимонад в графине',
-            volume: '800 мл',
-            ingredients: 'Любой вкус на выбор',
-            allergens: [],
-            script: '«На компанию выгоднее графин»',
-            serving: 'Графин со льдом и фруктами',
-            price: 1350
-          }
+          { name: 'Райхон', volume: '300 мл', ingredients: 'Настой фиолетового базилика, сахар, лимонная кислота, газировка', allergens: [], script: '«С ароматом свежего базилика»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Тархун', volume: '300 мл', ingredients: 'Экстракт эстрагона, лимон, сахар, газировка, лайм', allergens: [], script: '«Натуральный тархун – вкус из детства»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Мандариновый', volume: '300 мл', ingredients: 'Пюре мандаринов, юдзу, фруктозный сироп, газировка, мармеладные шарики', allergens: [], script: '«Солнечный, с кислинкой юдзу»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Имбирь мёд лимон', volume: '300 мл', ingredients: 'Имбирный сок, мёд, лайм, газировка', allergens: ['Мёд'], script: '«Имбирный лимонад с мёдом – согревает»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Смородина Иван-Чай', volume: '300 мл', ingredients: 'Пюре чёрной смородины, отвар иван-чая, газировка, свежие ягоды', allergens: [], script: '«Таёжный вкус: ягоды + травы»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Манго Маракуйя Кокос', volume: '300 мл', ingredients: 'Пюре манго, маракуйя, кокосовое молоко, газировка, мармеладные шарики', allergens: ['Кокос'], script: '«Тропический взрыв – самый популярный»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Огурец и мята', volume: '300 мл', ingredients: 'Огуречный сок, мята, лайм, газировка', allergens: [], script: '«Лёгкий, как глоток родниковой воды»', serving: 'Высокий стакан со льдом', price: 460 },
+          { name: 'Лимонад в графине', volume: '0,8 л', ingredients: 'Любой вкус на выбор', allergens: [], script: '«На компанию выгоднее графин»', serving: 'Графин со льдом и фруктами', price: 1350 }
         ]
       },
-
-      // SMOOTHIES
       {
-        id: 'smoothies',
-        title: '🥛 Смузи / Милкшейки',
-        icon: '🥛',
+        id: 'smoothies', title: '🥛 Смузи / Милкшейки', icon: '🥛',
         items: [
-          {
-            name: 'Смузи Манговый Урбеч',
-            volume: '290 мл',
-            ingredients: 'Манго, банан, урбеч из тыквенных семечек, мёд, кокосовое молоко',
-            allergens: ['Мёд', 'Кокос', 'Семечки'],
-            script: '«Полезный заряд энергии»',
-            serving: 'Высокий стакан, трубочка',
-            price: 600
-          },
-          {
-            name: 'Смузи Яблоко Банан',
-            volume: '290 мл',
-            ingredients: 'Яблоко, банан, мёд, зелёные мармеладные шарики',
-            allergens: ['Мёд'],
-            script: '«Банановая нежность и яблочная свежесть»',
-            serving: 'Высокий стакан, трубочка',
-            price: 600
-          },
-          {
-            name: 'Милкшейк Ванильный',
-            volume: '300 мл',
-            ingredients: 'Мороженое, молоко, ванильный сироп, взбитые сливки, банан',
-            allergens: ['Молоко', 'Яйцо'],
-            script: '«Нежный, воздушный»',
-            serving: 'Высокий стакан, трубочка',
-            price: 550
-          },
-          {
-            name: 'Милкшейк Ягодный',
-            volume: '300 мл',
-            ingredients: 'Мороженое, молоко, ягодный топпинг, банан',
-            allergens: ['Молоко', 'Яйцо'],
-            script: '«Ягодный микс»',
-            serving: 'Высокий стакан, трубочка',
-            price: 550
-          },
-          {
-            name: 'Милкшейк Шоколадный',
-            volume: '300 мл',
-            ingredients: 'Мороженое, молоко, шоколадный топпинг, банан, ореховый сироп',
-            allergens: ['Молоко', 'Яйцо', 'Орехи'],
-            script: '«Шоколадно-ореховое удовольствие»',
-            serving: 'Высокий стакан, трубочка',
-            price: 550
-          },
-          {
-            name: 'Айс Латте Банан Карамель',
-            volume: '290 мл',
-            ingredients: 'Эспрессо, молоко, банановый сироп, карамель, взбитые сливки, лёд',
-            allergens: ['Молоко'],
-            script: '«Кофе с бананом и карамелью»',
-            serving: 'Высокий стакан, трубочка',
-            price: 460
-          }
+          { name: 'Смузи Манговый Урбеч', volume: '290 мл', ingredients: 'Манго, банан, урбеч из тыквенных семечек, мёд, кокосовое молоко', allergens: ['Мёд', 'Кокос', 'Семечки'], script: '«Полезный заряд энергии»', serving: 'Высокий стакан, трубочка', price: 600 },
+          { name: 'Смузи Яблоко Банан', volume: '290 мл', ingredients: 'Яблоко, банан, мёд, зелёные мармеладные шарики', allergens: ['Мёд'], script: '«Банановая нежность и яблочная свежесть»', serving: 'Высокий стакан, трубочка', price: 600 },
+          { name: 'Милкшейк Ванильный', volume: '300 мл', ingredients: 'Мороженое, молоко, ванильный сироп, взбитые сливки, банан', allergens: ['Молоко', 'Яйцо'], script: '«Нежный, воздушный»', serving: 'Высокий стакан, трубочка', price: 550 },
+          { name: 'Милкшейк Ягодный', volume: '300 мл', ingredients: 'Мороженое, молоко, ягодный топпинг, банан', allergens: ['Молоко', 'Яйцо'], script: '«Ягодный микс»', serving: 'Высокий стакан, трубочка', price: 550 },
+          { name: 'Милкшейк Шоколадный', volume: '300 мл', ingredients: 'Мороженое, молоко, шоколадный топпинг, банан, ореховый сироп', allergens: ['Молоко', 'Яйцо', 'Орехи'], script: '«Шоколадно-ореховое удовольствие»', serving: 'Высокий стакан, трубочка', price: 550 },
+          { name: 'Айс Латте Банан Карамель', volume: '290 мл', ingredients: 'Эспрессо, молоко, банановый сироп, карамель, взбитые сливки, лёд', allergens: ['Молоко'], script: '«Кофе с бананом и карамелью»', serving: 'Высокий стакан, трубочка', price: 460 }
         ]
       },
-
-      // VZVARY
       {
-        id: 'vzvary',
-        title: '☕ Взвары (горячие)',
-        icon: '☕',
+        id: 'vzvary', title: '☕ Взвары (горячие)', icon: '☕',
         items: [
-          {
-            name: 'Мандарин белый кардамон',
-            volume: '500 мл',
-            ingredients: 'Мандариновый сок, цедра, кардамон, кипяток',
-            allergens: [],
-            script: '«Пряный, согревающий»',
-            serving: 'Керамическая чашка',
-            price: 650
-          },
-          {
-            name: 'Яблоко корица османтус',
-            volume: '500 мл',
-            ingredients: 'Яблоко, корица, чай османтус, мёд, кипяток',
-            allergens: ['Мёд'],
-            script: '«Аромат яблочного пирога»',
-            serving: 'Керамическая чашка',
-            price: 650
-          },
-          {
-            name: 'Смородина Иван-Чай',
-            volume: '500 мл',
-            ingredients: 'Пюре чёрной смородины, лимон, иван-чай, мята, кипяток',
-            allergens: [],
-            script: '«Ягодно-травяной»',
-            serving: 'Керамическая чашка',
-            price: 650
-          },
-          {
-            name: 'Груша имбирь',
-            volume: '500 мл',
-            ingredients: 'Груша, имбирь, лайм, мята, мёд, кипяток',
-            allergens: ['Мёд'],
-            script: '«Имбирно-грушевый согревающий»',
-            serving: 'Керамическая чашка',
-            price: 650
-          },
-          {
-            name: 'Облепиха корица',
-            volume: '500 мл',
-            ingredients: 'Облепиха, корица, ванильный сироп, лимон, кипяток',
-            allergens: [],
-            script: '«Витаминная бомба»',
-            serving: 'Керамическая чашка',
-            price: 650
-          },
-          {
-            name: 'Глинтвейн безалкогольный',
-            volume: '500 мл',
-            ingredients: 'Пряный сироп на виноградном соке, корица, апельсин, яблоко, кипяток',
-            allergens: [],
-            script: '«Пряная альтернатива кофе»',
-            serving: 'Керамическая чашка',
-            price: 650
-          }
+          { name: 'Мандарин белый кардамон', volume: '500 мл', ingredients: 'Мандариновый сок, цедра, кардамон, кипяток', allergens: [], script: '«Пряный, согревающий»', serving: 'Керамическая чашка', price: 650 },
+          { name: 'Яблоко корица османтус', volume: '500 мл', ingredients: 'Яблоко, корица, чай османтус, мёд, кипяток', allergens: ['Мёд'], script: '«Аромат яблочного пирога»', serving: 'Керамическая чашка', price: 650 },
+          { name: 'Смородина Иван-Чай', volume: '500 мл', ingredients: 'Пюре чёрной смородины, лимон, иван-чай, мята, кипяток', allergens: [], script: '«Ягодно-травяной»', serving: 'Керамическая чашка', price: 650 },
+          { name: 'Груша имбирь', volume: '500 мл', ingredients: 'Груша, имбирь, лайм, мята, мёд, кипяток', allergens: ['Мёд'], script: '«Имбирно-грушевый согревающий»', serving: 'Керамическая чашка', price: 650 },
+          { name: 'Облепиха корица', volume: '500 мл', ingredients: 'Облепиха, корица, ванильный сироп, лимон, кипяток', allergens: [], script: '«Витаминная бомба»', serving: 'Керамическая чашка', price: 650 },
+          { name: 'Глинтвейн безалкогольный', volume: '500 мл', ingredients: 'Пряный сироп на виноградном соке, корица, апельсин, яблоко, кипяток', allergens: [], script: '«Пряная альтернатива кофе»', serving: 'Керамическая чашка', price: 650 }
         ]
       },
-
-      // TEA
       {
-        id: 'tea',
-        title: '🍵 Классический чай',
-        icon: '🍵',
+        id: 'tea', title: '🍵 Чай', icon: '🍵',
         items: [
-          {
-            name: 'Ассам / Эрл Грей / Сенча / Молочный Улун',
-            volume: '800 мл',
-            ingredients: 'Чёрные: Ассам (крепкий, медовый), Эрл Грей (с бергамотом). Зелёный: Сенча (травянистый, с горчинкой). Молочный Улун – зелёный улун с натуральным сливочным ароматом',
-            allergens: [],
-            script: '«Молочный улун – наш бестселлер, у него кремовый вкус»',
-            serving: 'Чайник, чашки',
-            price: 560
-          },
-          {
-            name: 'Добавки к чаю',
-            volume: '10 г',
-            ingredients: 'Мята / Чабрец / Липа / Корень имбиря / Лимон / Мёд',
-            allergens: ['Мёд'],
-            script: 'Дополните ваш чай',
-            serving: '',
-            price: 160
-          }
+          { name: 'Ассам / Эрл Грей / Сенча / Молочный Улун', volume: '800 мл', ingredients: 'Чёрные, Зелёный, Молочный Улун (зелёный с ароматом)', allergens: [], script: '«Молочный улун – наш бестселлер, у него кремовый вкус»', serving: 'Чайник, чашки', price: 560 },
+          { name: 'Добавки к чаю', volume: '10 г', ingredients: 'Мята, чабрец, липа, корень имбиря, лимон, мёд', allergens: ['Мёд'], script: '', serving: '', price: 160 },
+          { name: 'Полевой сбор алтайских трав', volume: '800 мл', ingredients: 'Иван-чай, таволга, лист берёзы, эхинацея, душица', allergens: [], script: 'Успокаивающий эффект', serving: 'Чайник, чашки', price: 600 },
+          { name: 'Таёжный сбор', volume: '800 мл', ingredients: 'Иван-чай, душица, кедровая хвоя, шиповник, шишки', allergens: [], script: 'Согревающий, смолистый', serving: 'Чайник, чашки', price: 600 },
+          { name: 'Горный сбор', volume: '800 мл', ingredients: 'Чабрец, зверобой, душица, мята', allergens: [], script: 'Тонизирующий', serving: 'Чайник, чашки', price: 600 },
+          { name: 'Иван-Чай', volume: '800 мл', ingredients: 'Только кипрей', allergens: [], script: 'Мягкий, слегка сладковатый', serving: 'Чайник, чашки', price: 600 },
+          { name: 'Саган-Дайля (шаманский чай)', volume: '800 мл', ingredients: 'Рододендрон Адамса', allergens: [], script: '«Очень бодрит (сильнее кофе). Бодрит, но давление не скачет»', serving: 'Чайник, чашки', price: 600 },
+          { name: 'Ромашка с мятой', volume: '800 мл', ingredients: 'Цветки ромашки, листья мяты', allergens: [], script: 'Спальный, успокаивающий', serving: 'Чайник, чашки', price: 600 },
+          { name: 'Липовый с османтусом и апельсином', volume: '800 мл', ingredients: 'Липа, османтус, цедра апельсина', allergens: [], script: 'Медово-цитрусовый', serving: 'Чайник, чашки', price: 600 }
         ]
       },
-
-      // HERBAL TEA
       {
-        id: 'herbal-tea',
-        title: '🌿 Авторские и травяные чаи',
-        icon: '🌿',
+        id: 'coffee', title: '☕ Кофе', icon: '',
         items: [
-          {
-            name: 'Полевой сбор алтайских трав',
-            volume: '800 мл',
-            ingredients: 'Иван-чай, таволга, лист берёзы, эхинацея, душица',
-            allergens: [],
-            script: 'Успокаивающий эффект',
-            serving: 'Чайник, чашки',
-            price: 600
-          },
-          {
-            name: 'Таёжный сбор с молодыми шишками',
-            volume: '800 мл',
-            ingredients: 'Иван-чай, душица, кедровая хвоя, шиповник, шишки',
-            allergens: [],
-            script: 'Согревающий, смолистый',
-            serving: 'Чайник, чашки',
-            price: 600
-          },
-          {
-            name: 'Горный сбор кавказских трав',
-            volume: '800 мл',
-            ingredients: 'Чабрец, зверобой, душица, мята',
-            allergens: [],
-            script: 'Тонизирующий',
-            serving: 'Чайник, чашки',
-            price: 600
-          },
-          {
-            name: 'Иван-Чай',
-            volume: '800 мл',
-            ingredients: 'Только кипрей',
-            allergens: [],
-            script: 'Мягкий, слегка сладковатый',
-            serving: 'Чайник, чашки',
-            price: 600
-          },
-          {
-            name: 'Саган-Дайля (шаманский чай)',
-            volume: '800 мл',
-            ingredients: 'Рододендрон Адамса',
-            allergens: [],
-            script: '«Очень бодрит (сильнее кофе). Шаманский чай из Бурятии. Бодрит, но давление не скачет»',
-            serving: 'Чайник, чашки',
-            price: 600
-          },
-          {
-            name: 'Ромашка с мятой',
-            volume: '800 мл',
-            ingredients: 'Цветки ромашки + листья мяты',
-            allergens: [],
-            script: 'Спальный, успокаивающий',
-            serving: 'Чайник, чашки',
-            price: 600
-          },
-          {
-            name: 'Липовый с османтусом и апельсином',
-            volume: '800 мл',
-            ingredients: 'Липа, османтус, цедра апельсина',
-            allergens: [],
-            script: 'Медово-цитрусовый',
-            serving: 'Чайник, чашки',
-            price: 600
-          }
+          { name: 'Эспрессо', volume: '30 мл', ingredients: '100% арабика', allergens: [], script: 'Правило 4 часов: ручка чашки, ложечка, сахар – параллельно. + стакан воды', serving: 'Малая пара + вода из кулера', price: 350 },
+          { name: 'Двойной эспрессо', volume: '60 мл', ingredients: '100% арабика', allergens: [], script: 'Правило 4 часов', serving: 'Малая пара + вода из кулера', price: 380 },
+          { name: 'Американо', volume: '200 мл', ingredients: '100% арабика', allergens: [], script: '', serving: 'Большая пара', price: 350 },
+          { name: 'Капучино', volume: '200 мл', ingredients: 'Эспрессо, молоко', allergens: ['Молоко'], script: 'Есть альтернативное молоко: кокос, миндаль, банан', serving: 'Большая пара', price: 390 },
+          { name: 'Двойной капучино', volume: '350 мл', ingredients: 'Эспрессо, молоко', allergens: ['Молоко'], script: 'Есть альтернативное молоко', serving: 'Термопот', price: 440 },
+          { name: 'Латте макиато', volume: '350 мл', ingredients: 'Эспрессо, молоко', allergens: ['Молоко'], script: 'Есть альтернативное молоко', serving: 'Термопот, трубочка', price: 400 },
+          { name: 'Раф с карамелью', volume: '350 мл', ingredients: 'Эспрессо, сливки, карамель', allergens: ['Молоко', 'Сливки'], script: 'Нежный сливочный вкус', serving: 'Термопот', price: 470 },
+          { name: 'Флэт уайт', volume: '200 мл', ingredients: 'Двойной эспрессо, молоко', allergens: ['Молоко'], script: 'Кофейный, с тонким слоем пены', serving: 'Большая пара', price: 440 },
+          { name: 'Матча латте', volume: '350 мл', ingredients: 'Зелёный чай матча, молоко', allergens: ['Молоко'], script: 'Есть на альтернативном молоке', serving: 'Термопот', price: 600 },
+          { name: 'Какао с маршмеллоу', volume: '270 мл', ingredients: 'Какао, молоко, маршмеллоу', allergens: ['Молоко'], script: 'Нежный шоколадный вкус', serving: 'Чашка', price: 350 },
+          { name: 'Сироп в ассортименте', volume: '10 мл', ingredients: 'Ваниль, карамель, орех и др.', allergens: [], script: '', serving: '', price: 120 }
         ]
       },
-
-      // COFFEE
       {
-        id: 'coffee',
-        title: '☕ Кофе (100% арабика)',
-        icon: '☕',
+        id: 'beer', title: '🍺 Пиво и Сидр', icon: '🍺',
         items: [
-          {
-            name: 'Эспрессо',
-            volume: '30 мл',
-            ingredients: '100% арабика',
-            allergens: [],
-            script: 'Правило 4 часов: ручка чашки, ложечка, сахар – параллельно. + стакан воды',
-            serving: 'Малая пара + вода из кулера',
-            price: 350
-          },
-          {
-            name: 'Двойной эспрессо',
-            volume: '60 мл',
-            ingredients: '100% арабика',
-            allergens: [],
-            script: 'Правило 4 часов: ручка чашки, ложечка, сахар – параллельно. + стакан воды',
-            serving: 'Малая пара + вода из кулера',
-            price: 380
-          },
-          {
-            name: 'Американо',
-            volume: '200 мл',
-            ingredients: '100% арабика',
-            allergens: [],
-            script: '',
-            serving: 'Большая пара',
-            price: 350
-          },
-          {
-            name: 'Капучино',
-            volume: '200 мл',
-            ingredients: 'Эспрессо, молоко',
-            allergens: ['Молоко'],
-            script: 'Есть альтернативное молоко: кокос, миндаль, банан',
-            serving: 'Большая пара',
-            price: 390
-          },
-          {
-            name: 'Двойной капучино',
-            volume: '350 мл',
-            ingredients: 'Эспрессо, молоко',
-            allergens: ['Молоко'],
-            script: 'Есть альтернативное молоко: кокос, миндаль, банан',
-            serving: 'Термопот',
-            price: 440
-          },
-          {
-            name: 'Латте макиато',
-            volume: '350 мл',
-            ingredients: 'Эспрессо, молоко',
-            allergens: ['Молоко'],
-            script: 'Есть альтернативное молоко: кокос, миндаль, банан',
-            serving: 'Термопот, трубочка',
-            price: 400
-          },
-          {
-            name: 'Раф с карамелью',
-            volume: '350 мл',
-            ingredients: 'Эспрессо, сливки, карамель',
-            allergens: ['Молоко', 'Сливки'],
-            script: 'Нежный сливочный вкус',
-            serving: 'Термопот',
-            price: 470
-          },
-          {
-            name: 'Флэт уайт',
-            volume: '200 мл',
-            ingredients: 'Двойной эспрессо, молоко',
-            allergens: ['Молоко'],
-            script: 'Кофейный, с тонким слоем пены',
-            serving: 'Большая пара',
-            price: 440
-          },
-          {
-            name: 'Капучино / Латте на альтернативном молоке',
-            volume: '200-350 мл',
-            ingredients: 'Кокос / Миндаль / Банан',
-            allergens: ['Кокос', 'Орехи'],
-            script: 'Для тех, кто не пьёт обычное молоко',
-            serving: 'По типу напитка',
-            price: '390/450'
-          },
-          {
-            name: 'Матча латте',
-            volume: '350 мл',
-            ingredients: 'Зелёный чай матча, молоко',
-            allergens: ['Молоко'],
-            script: 'Есть на альтернативном молоке',
-            serving: 'Термопот',
-            price: 600
-          },
-          {
-            name: 'Какао с маршмеллоу',
-            volume: '270 мл',
-            ingredients: 'Какао, молоко, маршмеллоу',
-            allergens: ['Молоко'],
-            script: 'Нежный шоколадный вкус',
-            serving: 'Чашка',
-            price: 350
-          },
-          {
-            name: 'Сироп в ассортименте',
-            volume: '10 мл',
-            ingredients: 'Ваниль, карамель, орех и др.',
-            allergens: [],
-            script: 'Добавьте вкуса вашему напитку',
-            serving: '',
-            price: 120
-          }
+          { name: 'Перони Настро Адзурро', volume: '330 мл', ingredients: 'Италия', allergens: ['Глютен'], script: 'Лёгкий итальянский лагер', serving: 'Бутылка, бокал', price: 690 },
+          { name: 'Корона Экстра', volume: '335 мл', ingredients: 'Мексика', allergens: ['Глютен'], script: 'Классический мексиканский лагер', serving: 'Бутылка + долька лайма (обязательно!)', price: 590 },
+          { name: 'Циндао Витбир', volume: '330 мл', ingredients: 'Китай', allergens: ['Глютен'], script: 'Пшеничное с цитрусовыми нотами', serving: 'Бутылка, бокал', price: 610 },
+          { name: 'Клаусталер (безалкогольное)', volume: '330 мл', ingredients: 'Германия', allergens: ['Глютен'], script: 'Немецкое безалкогольное', serving: 'Бутылка, бокал', price: 500 },
+          { name: 'Радебергер', volume: '330 мл', ingredients: 'Германия', allergens: ['Глютен'], script: 'Премиальный немецкий лагер', serving: 'Бутылка, бокал', price: 690 },
+          { name: 'Сидр Дальняя Дача', volume: '330 мл', ingredients: 'Россия (сухой / полусухой)', allergens: ['Сульфиты'], script: 'Натуральный яблочный сидр', serving: 'Бутылка, бокал', price: 670 },
+          { name: 'Бланш Де Брюселль (разливное)', volume: '500 мл', ingredients: 'Бельгия, пшеничное', allergens: ['Глютен'], script: 'Бельгийское пшеничное с пряностями', serving: 'Брендовый бокал', price: 700 },
+          { name: 'Штигль Гольдбрау (разливное)', volume: '500 мл', ingredients: 'Австрия, светлый лагер', allergens: ['Глютен'], script: 'Австрийский лагер, хлебный вкус', serving: 'Брендовый бокал', price: 760 }
         ]
       },
-
-      // BEER
       {
-        id: 'beer',
-        title: '🍺 Пиво / Сидр',
-        icon: '🍺',
+        id: 'cocktails', title: '🍸 Коктейли', icon: '🍸',
         items: [
-          {
-            name: 'Перони Настро Адзурро',
-            volume: '330 мл',
-            ingredients: 'Италия',
-            allergens: ['Глютен'],
-            script: 'Лёгкий итальянский лагер',
-            serving: 'Бутылка, бокал',
-            price: 690
-          },
-          {
-            name: 'Корона Экстра',
-            volume: '355 мл',
-            ingredients: 'Мексика',
-            allergens: ['Глютен'],
-            script: 'Классический мексиканский лагер',
-            serving: 'Бутылка + долька лайма (обязательно!)',
-            price: 590
-          },
-          {
-            name: 'Циндао Витбир',
-            volume: '330 мл',
-            ingredients: 'Китай',
-            allergens: ['Глютен'],
-            script: 'Пшеничное с цитрусовыми нотами',
-            serving: 'Бутылка, бокал',
-            price: 610
-          },
-          {
-            name: 'Клаусталер (безалкогольное)',
-            volume: '330 мл',
-            ingredients: 'Германия',
-            allergens: ['Глютен (следы)'],
-            script: 'Немецкое безалкогольное',
-            serving: 'Бутылка, бокал',
-            price: 500
-          },
-          {
-            name: 'Радебергер',
-            volume: '330 мл',
-            ingredients: 'Германия',
-            allergens: ['Глютен'],
-            script: 'Премиальный немецкий лагер',
-            serving: 'Бутылка, бокал',
-            price: 690
-          },
-          {
-            name: 'Сидр Дальняя Дача',
-            volume: '330 мл',
-            ingredients: 'Россия (сухой / полусухой)',
-            allergens: ['Сульфиты'],
-            script: 'Натуральный яблочный сидр',
-            serving: 'Бутылка, бокал',
-            price: 670
-          }
+          { name: 'Сарти спритц', volume: '', ingredients: 'Аперитив, игристое, газировка', allergens: [], script: '', serving: 'Бокал спритц', price: 850 },
+          { name: 'Кампари Спритц', volume: '', ingredients: 'Горький травяной ликёр, игристое, газировка, апельсин', allergens: ['Сульфиты'], script: '«Насыщенный, травянистый»', serving: 'Бокал спритц', price: 850 },
+          { name: 'Лавандовый джин-тоник', volume: '', ingredients: 'Джин, лавандовый сироп, тоник, мармеладные шарики', allergens: [], script: '«Фиолетовый, с ароматом лаванды. Самый фотогеничный коктейль»', serving: 'Винный бокал', price: 850 },
+          { name: 'Дайкири Банан', volume: '', ingredients: 'Белый ром, банановый сироп, лайм, свежий банан', allergens: [], script: '«Ром, банан, лайм – и шоу с огнём. Поджигаем банан у стола»', serving: 'Коктейльная рюмка + карамелизованный банан', price: 850 },
+          { name: 'Гранат смородина розовый брют', volume: '', ingredients: 'Гранатовый и смородиновый сок, розовое игристое, мята, зёрна граната', allergens: ['Сульфиты'], script: '«Ягодное игристое»', serving: 'Бокал коллинз', price: 850 },
+          { name: 'Апероль Спритц', volume: '', ingredients: 'Горький апельсиновый ликёр, игристое вино, газировка, апельсин', allergens: ['Сульфиты'], script: '«Венецианский аперитив»', serving: 'Бокал спритц', price: 850 },
+          { name: 'Абрикосовый сауэр', volume: '', ingredients: 'Абрикосовый ликёр, водка, лимон, яичный белок, персик', allergens: ['Яйцо'], script: '«Кисло-сладкий с пеной»', serving: 'Коктейльная рюмка, без трубочки', price: 850 },
+          { name: 'Огурец женевер лайм', volume: '', ingredients: 'Женевёр, огурец, лайм', allergens: [], script: 'Освежающий, зелёный', serving: 'Рокс', price: 850 },
+          { name: 'Базиликовый джин', volume: '', ingredients: 'Джин, молочно-кислый сироп, свежий базилик', allergens: [], script: '«Очень зелёный, свежий»', serving: 'Рокс, лист базилика', price: 850 },
+          { name: 'Берёзовый виски коллинз', volume: '', ingredients: 'Бурбон, берёзово-душицево-квасной сироп, розмарин, содовая', allergens: [], script: '«На берёзовом соке – наша гордость»', serving: 'Хайбол, розмарин', price: 850 },
+          { name: 'Негрони', volume: '', ingredients: 'Джин, горький ликёр Кампари, сладкий красный вермут, апельсиновая цедра', allergens: ['Сульфиты'], script: '«Для тех, кто любит горький баланс»', serving: 'Рокс', price: 850 },
+          { name: 'Манго Маракуйя', volume: '', ingredients: 'Смесь манго и маракуйи, лайм, яичный белок, свежая маракуйя', allergens: ['Яйцо'], script: '«Тропический сауэр»', serving: 'Шале-бокал', price: 850 },
+          { name: 'Смородиновый мул', volume: '', ingredients: 'Настойка чёрной смородины, имбирный эль, лайм, свежие ягоды, мята', allergens: [], script: '«Русский Moscow Mule»', serving: 'Медная кружка', price: 850 },
+          { name: 'Киви Крыжовник смэш', volume: '', ingredients: 'Крыжовник, киви, лайм, яичный белок, порошок матча', allergens: ['Яйцо'], script: '«Кисло-зелёный с матча»', serving: 'Коктейльная рюмка, посыпана матча', price: 850 }
         ]
       },
-
-      // DRAFT BEER
       {
-        id: 'draft-beer',
-        title: '🍻 Пиво разливное',
-        icon: '🍻',
+        id: 'liqueurs', title: ' Ликёры', icon: '',
         items: [
-          {
-            name: 'Бланш Де Брюселль',
-            volume: '500 / 300 мл',
-            ingredients: 'Бельгия, пшеничное',
-            allergens: ['Глютен'],
-            script: 'Бельгийское пшеничное с пряностями',
-            serving: 'Брендовый бокал',
-            price: '700 / 500'
-          },
-          {
-            name: 'Штигль Гольдбрау',
-            volume: '500 / 300 мл',
-            ingredients: 'Австрия, светлый лагер',
-            allergens: ['Глютен'],
-            script: 'Австрийский лагер, хлебный вкус',
-            serving: 'Брендовый бокал',
-            price: '760 / 550'
-          }
+          { name: 'Кампари', volume: '', ingredients: 'Италия', allergens: [], script: 'Горький апельсиновый', serving: 'Рюмка', price: 640 },
+          { name: 'Фернет Бранка', volume: '', ingredients: 'Италия', allergens: [], script: 'Травяной биттер', serving: 'Рюмка', price: 640 },
+          { name: 'Егермейстер', volume: '', ingredients: 'Германия', allergens: [], script: 'Травяной ликёр', serving: 'Рюмка', price: 640 }
         ]
       },
-
-      // COCKTAILS
       {
-        id: 'cocktails',
-        title: '🍸 Коктейли',
-        icon: '🍸',
+        id: 'tinctures', title: ' Авторские настойки', icon: '🫙',
         items: [
-          {
-            name: 'Апероль Спритц',
-            volume: '',
-            ingredients: 'Горький апельсиновый ликёр, игристое вино, газировка, апельсин',
-            allergens: ['Сульфиты'],
-            script: '«Венецианский аперитив»',
-            serving: 'Бокал спритц',
-            price: 850
-          },
-          {
-            name: 'Кампари Спритц',
-            volume: '',
-            ingredients: 'Горький травяной ликёр, игристое, газировка, апельсин',
-            allergens: ['Сульфиты'],
-            script: '«Насыщенный, травянистый»',
-            serving: 'Бокал спритц',
-            price: 850
-          },
-          {
-            name: 'Лавандовый джин-тоник',
-            volume: '',
-            ingredients: 'Джин, лавандовый сироп, тоник, мармеладные шарики',
-            allergens: [],
-            script: '«Фиолетовый, с ароматом лаванды. Самый фотогеничный коктейль»',
-            serving: 'Винный бокал',
-            price: 850
-          },
-          {
-            name: 'Дайкири Банан',
-            volume: '',
-            ingredients: 'Белый ром, банановый сироп, лайм, свежий банан',
-            allergens: [],
-            script: '«Ром, банан, лайм – и шоу с огнём. Поджигаем банан у стола»',
-            serving: 'Коктейльная рюмка + карамелизованный банан',
-            price: 850
-          },
-          {
-            name: 'Гранат смородина розовый брют',
-            volume: '',
-            ingredients: 'Гранатовый и смородиновый сок, розовое игристое, мята, зёрна граната',
-            allergens: ['Сульфиты'],
-            script: '«Ягодное игристое»',
-            serving: 'Бокал коллинз',
-            price: 850
-          },
-          {
-            name: 'Абрикосовый сауэр',
-            volume: '',
-            ingredients: 'Абрикосовый ликёр, водка, лимон, яичный белок, персик',
-            allergens: ['Яйцо'],
-            script: '«Кисло-сладкий с пеной»',
-            serving: 'Коктейльная рюмка, без трубочки',
-            price: 850
-          },
-          {
-            name: 'Огурец женевер лайм',
-            volume: '',
-            ingredients: 'Женевёр, огурец, лайм',
-            allergens: [],
-            script: 'Освежающий, зелёный',
-            serving: 'Рокс',
-            price: 850
-          },
-          {
-            name: 'Базиликовый джин',
-            volume: '',
-            ingredients: 'Джин, молочно-кислый сироп, свежий базилик',
-            allergens: [],
-            script: '«Очень зелёный, свежий»',
-            serving: 'Рокс, лист базилика',
-            price: 850
-          },
-          {
-            name: 'Берёзовый виски коллинз',
-            volume: '',
-            ingredients: 'Бурбон, берёзово-душицево-квасной сироп, розмарин, содовая',
-            allergens: [],
-            script: '«На берёзовом соке – наша гордость»',
-            serving: 'Хайбол, розмарин',
-            price: 850
-          },
-          {
-            name: 'Негрони',
-            volume: '',
-            ingredients: 'Джин, горький ликёр Кампари, сладкий красный вермут, апельсиновая цедра',
-            allergens: ['Сульфиты'],
-            script: '«Для тех, кто любит горький баланс»',
-            serving: 'Рокс',
-            price: 850
-          },
-          {
-            name: 'Манго Маракуйя',
-            volume: '',
-            ingredients: 'Смесь манго и маракуйи, лайм, яичный белок, свежая маракуйя',
-            allergens: ['Яйцо'],
-            script: '«Тропический сауэр»',
-            serving: 'Шале-бокал',
-            price: 850
-          },
-          {
-            name: 'Смородиновый мул',
-            volume: '',
-            ingredients: 'Настойка чёрной смородины, имбирный эль, лайм, свежие ягоды, мята',
-            allergens: [],
-            script: '«Русский Moscow Mule»',
-            serving: 'Медная кружка',
-            price: 850
-          },
-          {
-            name: 'Киви Крыжовник смэш',
-            volume: '',
-            ingredients: 'Крыжовник, киви, лайм, яичный белок, порошок матча',
-            allergens: ['Яйцо'],
-            script: '«Кисло-зелёный с матча»',
-            serving: 'Коктейльная рюмка, посыпана матча',
-            price: 850
-          }
+          { name: 'Северная морошка', volume: '50 мл', ingredients: 'Водка, ягоды морошки', allergens: [], script: 'Яркий ягодный, кисло-сладкий', serving: 'Рюмка', price: 500 },
+          { name: 'Сливянка', volume: '50 мл', ingredients: 'Тёмный ром, слива, кизил, пряности', allergens: [], script: 'Кисло-сладкая, согревающая', serving: 'Рюмка', price: 500 },
+          { name: 'Гранатовая', volume: '50 мл', ingredients: 'Водка, гранат', allergens: [], script: 'Насыщенная, фруктовая', serving: 'Рюмка', price: 500 },
+          { name: 'Жимолость', volume: '50 мл', ingredients: 'Водка, ягоды жимолости', allergens: [], script: 'Нежная, ягодная', serving: 'Рюмка', price: 500 },
+          { name: 'Пряная груша', volume: '50 мл', ingredients: 'Водка, груша, корица, гвоздика', allergens: [], script: 'Сладкая, пряная', serving: 'Рюмка', price: 500 },
+          { name: 'Малина тархун', volume: '50 мл', ingredients: 'Ром, малина, эстрагон', allergens: [], script: 'Фруктово-травяная', serving: 'Рюмка', price: 500 },
+          { name: 'Грейпфрут и роза', volume: '50 мл', ingredients: 'Водка, грейпфрут, роза', allergens: [], script: 'Цветочно-цитрусовая', serving: 'Рюмка', price: 500 },
+          { name: 'Лимончелло', volume: '50 мл', ingredients: 'Водка, лимонная цедра, сахар', allergens: [], script: 'Освежающая цитрусовая', serving: 'Рюмка (охлаждённая)', price: 500 },
+          { name: 'Клюквенная', volume: '50 мл', ingredients: 'Водка, клюква', allergens: [], script: 'Кисло-сладкая', serving: 'Рюмка', price: 500 },
+          { name: 'Сезонный крыжовник', volume: '50 мл', ingredients: 'Водка, крыжовник', allergens: [], script: 'Сезонная, кисло-сладкая', serving: 'Рюмка', price: 500 },
+          { name: 'Клубника лемонграсс', volume: '50 мл', ingredients: 'Водка, клубника, лемонграсс', allergens: [], script: 'Ягодная с цитрусовой свежестью', serving: 'Рюмка', price: 500 },
+          { name: 'Красная смородина перец', volume: '50 мл', ingredients: 'Водка, смородина, розовый перец', allergens: [], script: 'Фруктово-пряная, с перчинкой', serving: 'Рюмка', price: 500 },
+          { name: 'Хреновуха', volume: '50 мл', ingredients: 'Водка, хрен, дижонская горчица, специи', allergens: [], script: '«Острая, на водке с хреном и горчицей – для любителей погорячее»', serving: 'Рюмка (охлаждённая)', price: 500 },
+          { name: 'Перцовка', volume: '50 мл', ingredients: 'Водка, перец', allergens: [], script: 'Острая, согревающая', serving: 'Рюмка (охлаждённая)', price: 500 },
+          { name: 'Вишнёвая на джине', volume: '50 мл', ingredients: 'Джин, вишня', allergens: [], script: 'Вишня с лёгким можжевеловым оттенком', serving: 'Рюмка', price: 500 },
+          { name: 'Черноплодная рябина', volume: '50 мл', ingredients: 'Водка, черноплодная рябина', allergens: [], script: 'Терпкая, с горчинкой', serving: 'Рюмка', price: 500 },
+          { name: 'Сет настоек «Топ 8»', volume: '8×50 мл', ingredients: '8 разных позиций (обновляется еженедельно)', allergens: ['Разные'], script: '«Попробуйте сразу несколько – сет выгоднее и интереснее»', serving: 'Сет из 8 рюмок', price: 3600 }
         ]
       },
-
-      // LIQUEURS
       {
-        id: 'liqueurs',
-        title: '🥃 Ликёры',
-        icon: '🥃',
+        id: 'premium-tinctures', title: '💎 Настойки на водке NIKI PURE', icon: '💎',
         items: [
-          {
-            name: 'Кампари',
-            volume: '',
-            ingredients: 'Италия',
-            allergens: [],
-            script: 'Горький апельсиновый',
-            serving: 'Рюмка',
-            price: 640
-          },
-          {
-            name: 'Фернет Бранка',
-            volume: '',
-            ingredients: 'Италия',
-            allergens: [],
-            script: 'Травяной биттер',
-            serving: 'Рюмка',
-            price: 640
-          },
-          {
-            name: 'Егермейстер',
-            volume: '',
-            ingredients: 'Германия',
-            allergens: [],
-            script: 'Травяной ликёр',
-            serving: 'Рюмка',
-            price: 640
-          }
+          { name: 'Кавказский кизил', volume: '50 мл', ingredients: 'Водка Niki Pure, кизил, чёрная смородина, красный вермут', allergens: [], script: 'Густой кизил с терпкостью', serving: 'Рюмка', price: 600 },
+          { name: 'Брусника саган-дайля', volume: '50 мл', ingredients: 'Водка Niki Pure, брусника, саган-дайля, розовый перец, аперитивный ликёр', allergens: [], script: 'Кисло-сладкая, с хвойно-цветочным оттенком', serving: 'Рюмка', price: 600 },
+          { name: 'Черника вороника', volume: '50 мл', ingredients: 'Водка Niki Pure, черника, чёрная смородина, черничный конфитюр', allergens: [], script: 'Бархатистый, рубиновый, ягодный', serving: 'Рюмка', price: 600 },
+          { name: 'Чёрная смородина', volume: '50 мл', ingredients: 'Водка Niki Pure, чёрная смородина, иван-чай, красный вермут', allergens: [], script: 'Ягодно-травяной, с имбирём и апельсином', serving: 'Рюмка', price: 600 }
         ]
       },
-
-      // TINCTURES
       {
-        id: 'tinctures',
-        title: '🫙 Авторские настойки',
-        icon: '🫙',
+        id: 'strong', title: '🥃 Крепкий алкоголь', icon: '',
         items: [
-          {
-            name: 'Северная морошка',
-            volume: '50 мл',
-            ingredients: 'Водка, ягоды морошки',
-            allergens: [],
-            script: 'Яркий ягодный, кисло-сладкий',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Сливянка',
-            volume: '50 мл',
-            ingredients: 'Тёмный ром, слива, кизил, пряности',
-            allergens: [],
-            script: 'Кисло-сладкая, согревающая',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Гранатовая',
-            volume: '50 мл',
-            ingredients: 'Водка, гранат',
-            allergens: [],
-            script: 'Насыщенная, фруктовая',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Жимолость',
-            volume: '50 мл',
-            ingredients: 'Водка, ягоды жимолости',
-            allergens: [],
-            script: 'Нежная, ягодная',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Пряная груша',
-            volume: '50 мл',
-            ingredients: 'Водка, груша, корица, гвоздика',
-            allergens: [],
-            script: 'Сладкая, пряная',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Малина тархун',
-            volume: '50 мл',
-            ingredients: 'Ром, малина, эстрагон',
-            allergens: [],
-            script: 'Фруктово-травяная',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Грейпфрут и роза',
-            volume: '50 мл',
-            ingredients: 'Водка, грейпфрут, роза',
-            allergens: [],
-            script: 'Цветочно-цитрусовая',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Лимончелло',
-            volume: '50 мл',
-            ingredients: 'Водка, лимонная цедра, сахар',
-            allergens: [],
-            script: 'Освежающая цитрусовая',
-            serving: 'Рюмка (охлаждённая)',
-            price: 500
-          },
-          {
-            name: 'Клюквенная',
-            volume: '50 мл',
-            ingredients: 'Водка, клюква',
-            allergens: [],
-            script: 'Кисло-сладкая',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Сезонный крыжовник',
-            volume: '50 мл',
-            ingredients: 'Водка, крыжовник',
-            allergens: [],
-            script: 'Сезонная, кисло-сладкая',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Клубника лемонграсс',
-            volume: '50 мл',
-            ingredients: 'Водка, клубника, лемонграсс',
-            allergens: [],
-            script: 'Ягодная с цитрусовой свежестью',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Красная смородина перец',
-            volume: '50 мл',
-            ingredients: 'Водка, смородина, розовый перец',
-            allergens: [],
-            script: 'Фруктово-пряная, с перчинкой',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Хреновуха',
-            volume: '50 мл',
-            ingredients: 'Водка, хрен, дижонская горчица, специи',
-            allergens: [],
-            script: '«Острая, на водке с хреном и горчицей – для любителей погорячее»',
-            serving: 'Рюмка (охлаждённая)',
-            price: 500
-          },
-          {
-            name: 'Перцовка',
-            volume: '50 мл',
-            ingredients: 'Водка, перец',
-            allergens: [],
-            script: 'Острая, согревающая',
-            serving: 'Рюмка (охлаждённая)',
-            price: 500
-          },
-          {
-            name: 'Вишнёвая на джине',
-            volume: '50 мл',
-            ingredients: 'Джин, вишня',
-            allergens: [],
-            script: 'Вишня с лёгким можжевеловым оттенком',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Черноплодная рябина',
-            volume: '50 мл',
-            ingredients: 'Водка, черноплодная рябина',
-            allergens: [],
-            script: 'Терпкая, с горчинкой',
-            serving: 'Рюмка',
-            price: 500
-          },
-          {
-            name: 'Сет настоек «Топ 8»',
-            volume: '8×50 мл',
-            ingredients: '8 разных позиций (обновляется еженедельно)',
-            allergens: ['Разные'],
-            script: '«Попробуйте сразу несколько – сет выгоднее и интереснее»',
-            serving: 'Сет из 8 рюмок',
-            price: 3600
-          }
+          { name: 'Ники Пьюр (водка)', volume: '50 мл', ingredients: 'Россия, солодовый спирт Альфа', allergens: [], script: '«Солодовый спирт Альфа, очень мягкая»', serving: 'Рюмка (охлаждённая)', price: 610 },
+          { name: 'Арктика (водка)', volume: '50 мл', ingredients: 'Россия', allergens: [], script: '', serving: 'Рюмка (охлаждённая)', price: 560 },
+          { name: 'Онегин (водка)', volume: '50 мл', ingredients: 'Россия', allergens: [], script: '', serving: 'Рюмка (охлаждённая)', price: 570 },
+          { name: 'Царская Золотая (водка)', volume: '50 мл', ingredients: 'Россия', allergens: [], script: 'С нотками липового мёда и кедровых орешков', serving: 'Рюмка (охлаждённая)', price: 490 },
+          { name: 'Глен Морей 12 лет (виски)', volume: '50 мл', ingredients: 'Шотландия, Спейсайд', allergens: ['Глютен'], script: 'Цветочно-фруктовый', serving: 'Бокал глинкерн', price: 1200 },
+          { name: 'Джим Бим (виски)', volume: '50 мл', ingredients: 'США', allergens: ['Глютен'], script: 'Классический бурбон с карамелью', serving: 'Рокс', price: 750 },
+          { name: 'Джек Дэниелс (виски)', volume: '50 мл', ingredients: 'США', allergens: ['Глютен'], script: 'Теннесси виски', serving: 'Рокс', price: 760 },
+          { name: 'Чивас Ригал 12 лет (виски)', volume: '50 мл', ingredients: 'Шотландия', allergens: ['Глютен'], script: 'Классика, мёд, яблоко', serving: 'Рокс', price: 890 },
+          { name: 'Омар Сингл Молт (виски)', volume: '50 мл', ingredients: 'Тайвань', allergens: ['Глютен'], script: 'Тайваньский односолодовый', serving: 'Бокал глинкерн', price: 940 },
+          { name: 'Матусалем Инсолито Вайн Каск (ром)', volume: '50 мл', ingredients: 'Доминикана', allergens: [], script: 'Выдержка в винных бочках', serving: 'Рокс', price: 890 },
+          { name: 'Матусалем Гран Резерва 15 лет (ром)', volume: '50 мл', ingredients: 'Доминикана', allergens: [], script: '15 лет выдержки', serving: 'Бокал глинкерн', price: 1100 },
+          { name: 'Коньяк Камю VSOP', volume: '50 мл', ingredients: 'Франция', allergens: [], script: 'Классический коньяк', serving: 'Коньячный бокал', price: 940 },
+          { name: 'Коньяк Арарат 7 лет', volume: '50 мл', ingredients: 'Армения', allergens: [], script: 'Армянский коньяк', serving: 'Коньячный бокал', price: 710 },
+          { name: 'Текила Лей 925 Бланко', volume: '50 мл', ingredients: 'Мексика', allergens: [], script: 'Невыдержанная, дымная', serving: 'Рюмка + сангрита', price: 740 },
+          { name: 'Текила Лей 925 Репосадо', volume: '50 мл', ingredients: 'Мексика', allergens: [], script: '11 месяцев выдержки, мягче, с дубом', serving: 'Рюмка + сангрита', price: 890 },
+          { name: 'Кальвадос Морин VSOP', volume: '50 мл', ingredients: 'Франция', allergens: [], script: 'Яблочный кальвадос', serving: 'Коньячный бокал', price: 960 }
         ]
       },
-
-      // PREMIUM TINCTURES
       {
-        id: 'premium-tinctures',
-        title: '💎 Настойки на водке NIKI PURE',
-        icon: '💎',
-        items: [
-          {
-            name: 'Кавказский кизил',
-            volume: '50 мл',
-            ingredients: 'Водка Niki Pure, кизил, чёрная смородина, красный вермут',
-            allergens: [],
-            script: 'Густой кизил с терпкостью',
-            serving: 'Рюмка',
-            price: 600
-          },
-          {
-            name: 'Брусника саган-дайля',
-            volume: '50 мл',
-            ingredients: 'Водка Niki Pure, брусника, саган-дайля, розовый перец, аперитивный ликёр',
-            allergens: [],
-            script: 'Кисло-сладкая, с хвойно-цветочным оттенком',
-            serving: 'Рюмка',
-            price: 600
-          },
-          {
-            name: 'Черника вороника',
-            volume: '50 мл',
-            ingredients: 'Водка Niki Pure, черника, чёрная смородина, черничный конфитюр',
-            allergens: [],
-            script: 'Бархатистый, рубиновый, ягодный',
-            serving: 'Рюмка',
-            price: 600
-          },
-          {
-            name: 'Чёрная смородина',
-            volume: '50 мл',
-            ingredients: 'Водка Niki Pure, чёрная смородина, иван-чай, красный вермут',
-            allergens: [],
-            script: 'Ягодно-травяной, с имбирём и апельсином',
-            serving: 'Рюмка',
-            price: 600
-          }
-        ]
-      },
-
-      // WHISKEY
-      {
-        id: 'whiskey',
-        title: '🥃 Виски',
-        icon: '🥃',
-        items: [
-          {
-            name: 'Глен Морей 12 лет',
-            volume: '',
-            ingredients: 'Шотландия, Спейсайд',
-            allergens: ['Глютен'],
-            script: 'Цветочно-фруктовый',
-            serving: 'Бокал глинкерн',
-            price: 1200
-          },
-          {
-            name: 'Джим Бим (бурбон)',
-            volume: '',
-            ingredients: 'США',
-            allergens: ['Глютен'],
-            script: 'Классический бурбон с карамелью',
-            serving: 'Рокс',
-            price: 750
-          },
-          {
-            name: 'Джек Дэниелс',
-            volume: '',
-            ingredients: 'США',
-            allergens: ['Глютен'],
-            script: 'Теннесси виски',
-            serving: 'Рокс',
-            price: 760
-          },
-          {
-            name: 'Чивас Ригал 12 лет',
-            volume: '',
-            ingredients: 'Шотландия',
-            allergens: ['Глютен'],
-            script: 'Классика, мёд, яблоко',
-            serving: 'Рокс',
-            price: 890
-          },
-          {
-            name: 'Омар Сингл Молт',
-            volume: '',
-            ingredients: 'Тайвань',
-            allergens: ['Глютен'],
-            script: 'Тайваньский односолодовый',
-            serving: 'Бокал глинкерн',
-            price: 940
-          }
-        ]
-      },
-
-      // RUM
-      {
-        id: 'rum',
-        title: '‍☠️ Ром',
-        icon: '🏴‍️',
-        items: [
-          {
-            name: 'Матусалем Инсолито Вайн Каск',
-            volume: '',
-            ingredients: 'Доминикана',
-            allergens: [],
-            script: 'Выдержка в винных бочках',
-            serving: 'Рокс',
-            price: 890
-          },
-          {
-            name: 'Санто Доминго Гран Антано Ресерва',
-            volume: '',
-            ingredients: 'Доминикана',
-            allergens: [],
-            script: 'Золотой, ванильно-фруктовый',
-            serving: 'Рокс',
-            price: 890
-          },
-          {
-            name: 'Матусалем Гран Резерва 15 лет',
-            volume: '',
-            ingredients: 'Доминикана',
-            allergens: [],
-            script: '15 лет выдержки',
-            serving: 'Бокал глинкерн',
-            price: 1100
-          }
-        ]
-      },
-
-      // COGNAC
-      {
-        id: 'cognac',
-        title: '🍇 Коньяк',
-        icon: '🍇',
-        items: [
-          {
-            name: 'Коньяк Камю VSOP',
-            volume: '',
-            ingredients: 'Франция',
-            allergens: [],
-            script: 'Классический коньяк',
-            serving: 'Коньячный бокал',
-            price: 940
-          },
-          {
-            name: 'Коньяк Арарат 7 лет',
-            volume: '',
-            ingredients: 'Армения',
-            allergens: [],
-            script: 'Армянский коньяк',
-            serving: 'Коньячный бокал',
-            price: 710
-          },
-          {
-            name: 'Коньяк Эйч бай Хайн VSOP',
-            volume: '',
-            ingredients: 'Франция',
-            allergens: [],
-            script: 'Премиальный коньяк',
-            serving: 'Коньячный бокал',
-            price: 980
-          }
-        ]
-      },
-
-      // GIN & TEQUILA
-      {
-        id: 'gin-tequila',
-        title: '🍸 Джин / Текила',
-        icon: '🍸',
-        items: [
-          {
-            name: 'Джин Боббис Схидам',
-            volume: '',
-            ingredients: 'Хорватия',
-            allergens: [],
-            script: 'Классический джин',
-            serving: 'Рокс',
-            price: 810
-          },
-          {
-            name: 'Джин Хопперс Мандарин и Розмарин',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: [],
-            script: 'Авторский джин с цитрусовыми нотами',
-            serving: 'Рокс',
-            price: 760
-          },
-          {
-            name: 'Текила Лей 925 Даймонд Бланко',
-            volume: '',
-            ingredients: 'Мексика',
-            allergens: [],
-            script: 'Невыдержанная, дымная',
-            serving: 'Рюмка + сангрита',
-            price: 740
-          },
-          {
-            name: 'Текила Лей 925 Даймонд Репосадо',
-            volume: '',
-            ingredients: 'Мексика',
-            allergens: [],
-            script: '11 месяцев выдержки, мягче, с дубом',
-            serving: 'Рюмка + сангрита',
-            price: 890
-          }
-        ]
-      },
-
-      // VODKA
-      {
-        id: 'vodka',
-        title: '🍶 Водка',
-        icon: '🍶',
-        items: [
-          {
-            name: 'Ники Пьюр',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: [],
-            script: '«Солодовый спирт Альфа, очень мягкая»',
-            serving: 'Рюмка (охлаждённая)',
-            price: 610
-          },
-          {
-            name: 'Арктика',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: [],
-            script: 'Классическая водка',
-            serving: 'Рюмка (охлаждённая)',
-            price: 560
-          },
-          {
-            name: 'Онегин',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: [],
-            script: 'Премиальная водка',
-            serving: 'Рюмка (охлаждённая)',
-            price: 570
-          },
-          {
-            name: 'Царская Золотая',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: [],
-            script: 'С нотками липового мёда и кедровых орешков',
-            serving: 'Рюмка (охлаждённая)',
-            price: 490
-          }
-        ]
-      },
-
-      // DISTILLATES
-      {
-        id: 'distillates',
-        title: '🥃 Дистилляты',
-        icon: '🥃',
-        items: [
-          {
-            name: 'Кальвадос Морин VSOP',
-            volume: '',
-            ingredients: 'Франция',
-            allergens: [],
-            script: 'Яблочный кальвадос',
-            serving: 'Коньячный бокал',
-            price: 960
-          },
-          {
-            name: 'Полба на колосках ручного сбора',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: ['Глютен'],
-            script: 'Авторский дистиллят',
-            serving: 'Рюмка',
-            price: 790
-          },
-          {
-            name: 'Полугар №1 Рожь и Пшеница',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: ['Глютен'],
-            script: 'Хлебное вино',
-            serving: 'Рюмка',
-            price: 790
-          },
-          {
-            name: 'Полугар №3 Бородинский с Тмином',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: ['Глютен'],
-            script: 'С тмином',
-            serving: 'Рюмка',
-            price: 790
-          },
-          {
-            name: 'Чача Фанагория 10 лет',
-            volume: '',
-            ingredients: 'Россия',
-            allergens: [],
-            script: 'Выдержанная чача',
-            serving: 'Рюмка',
-            price: 840
-          }
-        ]
-      },
-
-      // ALLERGENS
-      {
-        id: 'allergens',
-        title: '⚠️ Памятка по аллергенам',
-        icon: '⚠️',
+        id: 'allergens', title: '⚠️ Памятка по аллергенам', icon: '⚠️',
         allergenTable: [
           { name: 'Глютен', locations: 'Всё пиво, квас, виски, джин, полба, полугар' },
           { name: 'Молоко', locations: 'Капучино, латте, матча, милкшейки, какао, раф' },
@@ -1939,102 +329,32 @@
         ],
         items: []
       },
-
-      // STORYTELLING
       {
-        id: 'storytelling',
-        title: '📖 Сторителлинг',
-        icon: '📖',
+        id: 'storytelling', title: '📖 Сторителлинг', icon: '📖',
         storytelling: true,
         items: []
       },
-
-      // QUIZ
       {
-        id: 'quiz',
-        title: '📝 Тест на знание меню',
-        icon: '📝',
+        id: 'quiz', title: '📝 Тест на знание меню', icon: '📝',
         items: []
       }
     ];
 
-    // Quiz questions
     const quizData = [
-      {
-        q: 'Какой аллерген содержится в домашнем квасе?',
-        options: ['Мёд', 'Глютен', 'Молоко', 'Орехи'],
-        correct: 1,
-        explain: 'Квас готовится на ячменном сусле, поэтому содержит глютен.'
-      },
-      {
-        q: 'Как правильно подать Corona Extra?',
-        options: ['Без добавок', 'С долькой лайма', 'С солью', 'В хайболе со льдом'],
-        correct: 1,
-        explain: 'По стандартам бара Corona всегда подаётся с долькой лайма.'
-      },
-      {
-        q: 'В каких коктейлях используется яичный белок?',
-        options: ['Апероль Спритц, Негрони', 'Абрикосовый сауэр, Манго Маракуйя, Киви Крыжовник смэш', 'Дайкири Банан, Лавандовый джин', 'Все вышеперечисленные'],
-        correct: 1,
-        explain: 'Яйцо есть в Абрикосовом сауре, Манго Маракуйе и Киви Крыжовнике. Они подаются без трубочки.'
-      },
-      {
-        q: 'Что сказать гостю при заказе Молочного Улуна?',
-        options: ['«Это зелёный чай с молоком»', '«Наш бестселлер с натуральным сливочным вкусом»', '«Самый крепкий чай в меню»', '«Без кофеина»'],
-        correct: 1,
-        explain: 'Молочный улун – зелёный улун с натуральным кремовым ароматом, без молока.'
-      },
-      {
-        q: 'Какое правило подачи эспрессо обязательно?',
-        options: ['Подавать с лимоном', 'Параллельно: ручка чашки, ложка, сахар + вода из кулера', 'Подавать в высоком стакане', 'Добавлять корицу'],
-        correct: 1,
-        explain: 'Правило 4 часов + стакан воды.'
-      },
-      {
-        q: 'На каком алкоголе сделана настойка «Сливянка»?',
-        options: ['Водка', 'Белый ром', 'Тёмный ром', 'Джин'],
-        correct: 2,
-        explain: 'Сливянка готовится на тёмном роме, что даёт карамельные ноты.'
-      },
-      {
-        q: 'Гостю нужно безалкогольное, но он любит «Глинтвейн». Что предложить?',
-        options: ['Коктейль Негрони', 'Глинтвейн безалкогольный (500 мл)', 'Тоник с лаймом', 'Квас вишнёвый'],
-        correct: 1,
-        explain: 'В меню есть безалкогольный глинтвейн на виноградном соке со специями.'
-      },
-      {
-        q: 'Что делать, если гость сообщил об аллергии, а вы не уверены в составе?',
-        options: ['Сказать «Там ничего нет»', 'Предложить воду и уйти', '«Я сейчас проверю у бармена, какие напитки безопасны. Минуту»', 'Попросить гостя прочитать меню самому'],
-        correct: 2,
-        explain: 'Правило №2: при неуверенности – уточняем у бармена, не рискуем.'
-      },
-      {
-        q: 'Какой чай бодрит сильнее кофе?',
-        options: ['Молочный улун', 'Саган-Дайля (шаманский чай)', 'Ромашка с мятой', 'Эрл Грей'],
-        correct: 1,
-        explain: 'Саган-Дайля из Бурятии даёт сильный тонизирующий эффект без скачков давления.'
-      },
-      {
-        q: 'Когда нужно предложить гостю повторить напиток?',
-        options: ['Когда бокал пуст', 'Когда осталось 1/3 бокала', 'Через 10 минут после заказа', 'Только если гость попросит'],
-        correct: 1,
-        explain: 'Золотое правило №3: предлагать повтор при 1/3 остатка.'
-      },
-      {
-        q: 'Что особенного в водке «Ники Пьюр»?',
-        options: ['Самая дешёвая', 'Солодовый спирт Альфа, очень мягкая', 'Самая крепкая', 'С добавлением мёда'],
-        correct: 1,
-        explain: 'Ники Пьюр – солодовый спирт Альфа, очень мягкая.'
-      },
-      {
-        q: 'Какой джин с нотками огурца и розы?',
-        options: ['Sir Edmund', 'Gin Mare', 'Hendrick\'s', 'Боббис Схидам'],
-        correct: 2,
-        explain: 'Hendrick\'s – с нотками огурца и розы.'
-      }
+      { q: 'Какой аллерген содержится в домашнем квасе?', options: ['Мёд', 'Глютен', 'Молоко', 'Орехи'], correct: 1, explain: 'Квас готовится на ячменном сусле, поэтому содержит глютен.' },
+      { q: 'Как правильно подать Corona Extra?', options: ['Без добавок', 'С долькой лайма', 'С солью', 'В хайболе со льдом'], correct: 1, explain: 'По стандартам бара Corona всегда подаётся с долькой лайма.' },
+      { q: 'В каких коктейлях используется яичный белок?', options: ['Апероль Спритц, Негрони', 'Абрикосовый сауэр, Манго Маракуйя, Киви Крыжовник смэш', 'Дайкири Банан, Лавандовый джин', 'Все вышеперечисленные'], correct: 1, explain: 'Яйцо есть в Абрикосовом сауре, Манго Маракуйе и Киви Крыжовнике. Они подаются без трубочки.' },
+      { q: 'Что сказать гостю при заказе Молочного Улуна?', options: ['«Это зелёный чай с молоком»', '«Наш бестселлер с натуральным сливочным вкусом»', '«Самый крепкий чай в меню»', '«Без кофеина»'], correct: 1, explain: 'Молочный улун – зелёный улун с натуральным кремовым ароматом, без молока.' },
+      { q: 'Какое правило подачи эспрессо обязательно?', options: ['Подавать с лимоном', 'Параллельно: ручка чашки, ложка, сахар + вода из кулера', 'Подавать в высоком стакане', 'Добавлять корицу'], correct: 1, explain: 'Правило 4 часов + стакан воды.' },
+      { q: 'На каком алкоголе сделана настойка «Сливянка»?', options: ['Водка', 'Белый ром', 'Тёмный ром', 'Джин'], correct: 2, explain: 'Сливянка готовится на тёмном роме, что даёт карамельные ноты.' },
+      { q: 'Гостю нужно безалкогольное, но он любит «Глинтвейн». Что предложить?', options: ['Коктейль Негрони', 'Глинтвейн безалкогольный (500 мл)', 'Тоник с лаймом', 'Квас вишнёвый'], correct: 1, explain: 'В меню есть безалкогольный глинтвейн на виноградном соке со специями.' },
+      { q: 'Что делать, если гость сообщил об аллергии, а вы не уверены в составе?', options: ['Сказать «Там ничего нет»', 'Предложить воду и уйти', '«Я сейчас проверю у бармена, какие напитки безопасны. Минуту»', 'Попросить гостя прочитать меню самому'], correct: 2, explain: 'Правило №2: при неуверенности – уточняем у бармена, не рискуем.' },
+      { q: 'Какой чай бодрит сильнее кофе?', options: ['Молочный улун', 'Саган-Дайля (шаманский чай)', 'Ромашка с мятой', 'Эрл Грей'], correct: 1, explain: 'Саган-Дайля из Бурятии даёт сильный тонизирующий эффект без скачков давления.' },
+      { q: 'Когда нужно предложить гостю повторить напиток?', options: ['Когда бокал пуст', 'Когда осталось 1/3 бокала', 'Через 10 минут после заказа', 'Только если гость попросит'], correct: 1, explain: 'Золотое правило №3: предлагать повтор при 1/3 остатка.' },
+      { q: 'Что особенного в водке «Ники Пьюр»?', options: ['Самая дешёвая', 'Солодовый спирт Альфа, очень мягкая', 'Самая крепкая', 'С добавлением мёда'], correct: 1, explain: 'Ники Пьюр – солодовый спирт Альфа, очень мягкая.' },
+      { q: 'Какой джин с нотками огурца и розы?', options: ['Sir Edmund', 'Gin Mare', 'Hendrick\'s', 'Боббис Схидам'], correct: 2, explain: 'Hendrick\'s – с нотками огурца и розы.' }
     ];
 
-    // Storytelling content
     const storytellingContent = {
       rules: [
         {
@@ -2069,10 +389,8 @@
       ]
     };
 
-    // Current section
     let currentSection = 'water';
 
-    // Render navigation
     function renderNav() {
       const nav = document.getElementById('navTabs');
       nav.innerHTML = menuData.map(section => `
@@ -2083,7 +401,6 @@
       `).join('');
     }
 
-    // Show section
     function showSection(id) {
       currentSection = id;
       renderNav();
@@ -2091,14 +408,11 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Render content
     function renderContent() {
       const main = document.getElementById('mainContent');
       const section = menuData.find(s => s.id === currentSection);
-
       if (!section) return;
 
-      // Allergen table
       if (section.id === 'allergens') {
         main.innerHTML = `
           <h2 class="section-title">${section.title}</h2>
@@ -2121,7 +435,6 @@
         return;
       }
 
-      // Storytelling
       if (section.storytelling) {
         main.innerHTML = `
           <h2 class="section-title">${section.title}</h2>
@@ -2137,13 +450,11 @@
         return;
       }
 
-      // Quiz
       if (section.id === 'quiz') {
         renderQuiz(main);
         return;
       }
 
-      // Regular menu section
       main.innerHTML = `
         <h2 class="section-title">${section.title}</h2>
         <div class="menu-grid">
@@ -2152,7 +463,6 @@
       `;
     }
 
-    // Render menu item
     function renderMenuItem(item) {
       const allergenTags = item.allergens.length 
         ? item.allergens.map(a => `<span class="allergen-tag">${a}</span>`).join('')
@@ -2180,15 +490,14 @@
             </div>
           ` : ''}
           ${price ? `
-            <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border); text-align: right;">
-              <span style="font-size: 1.3rem; font-weight: 700; color: var(--accent);">${price}</span>
+            <div class="price">
+              <span class="price-value">${price}</span>
             </div>
           ` : ''}
         </div>
       `;
     }
 
-    // Render quiz
     function renderQuiz(container) {
       let score = 0;
       let answered = 0;
@@ -2217,17 +526,14 @@
       `;
     }
 
-    // Answer question
     function answerQuestion(questionIdx, answerIdx, element) {
       const questionEl = document.querySelector(`[data-question="${questionIdx}"]`);
       const options = questionEl.querySelectorAll('.quiz-option');
-      const explanation = document.getElementById(`explain-${questionIdx}');
+      const explanation = document.getElementById(`explain-${questionIdx}`);
       const correct = quizData[questionIdx].correct;
 
-      // Mark as answered
       options.forEach(opt => opt.classList.add('answered'));
       
-      // Show correct/wrong
       if (answerIdx === correct) {
         element.classList.add('correct');
       } else {
@@ -2235,25 +541,20 @@
         options[correct].classList.add('correct');
       }
 
-      // Show explanation
       explanation.classList.remove('hidden');
 
-      // Check if all answered
       const allAnswered = document.querySelectorAll('.quiz-option.answered').length === quizData.length * 4;
       if (allAnswered) {
         showQuizResult();
       }
     }
 
-    // Show quiz result
     function showQuizResult() {
       let correct = 0;
       quizData.forEach((q, idx) => {
         const questionEl = document.querySelector(`[data-question="${idx}"]`);
-        const selected = questionEl.querySelector('.quiz-option.wrong, .quiz-option.correct:not(:nth-child(2))');
-        if (selected && selected.classList.contains('correct') && !selected.classList.contains('wrong')) {
-          correct++;
-        }
+        const selected = questionEl.querySelector('.quiz-option.correct:not(.wrong)');
+        if (selected) correct++;
       });
 
       const percentage = (correct / quizData.length) * 100;
@@ -2287,7 +588,6 @@
       resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    // Initialize
     document.addEventListener('DOMContentLoaded', () => {
       renderNav();
       renderContent();
