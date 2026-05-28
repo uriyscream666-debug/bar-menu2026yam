@@ -132,19 +132,22 @@
   </div>
 
 <script>
+// ================= DATA =================
 const brands = {
   'Ники Пьюр':'https://niki-pure.ru', 'Царская':'https://www.tsk.ru', 'Hendrick':'https://www.hendricksgin.com',
   'Glen Moray':'https://www.glenmoray.com', 'Macallan':'https://www.themacallan.com', 'Chivas':'https://www.chivas.com',
-  'Jack Daniel':'https://www.jackdaniels.com', 'Camus':'https://www.camus-cognac.com'
+  'Jack Daniel':'https://www.jackdaniels.com', 'Camus':'https://www.camus-cognac.com', 'Peroni':'https://www.peroni.com',
+  'Corona':'https://www.corona.com', 'Tsingtao':'https://www.tsingtao.com.cn', 'Clausthaler':'https://www.clausthaler.com',
+  'Radeberger':'https://www.radeberger.de', 'Stiegl':'https://www.stiegl.at'
 };
 
 const menu = {
-  water: { title:'💧 Минеральная вода', items:[
+  water: { title:' Минеральная вода', items:[
     {n:'Байкал',v:'530 мл',i:['Газ/Негаз'],p:390,d:'Мягкая столовая вода'},
     {n:'Недра',v:'750 мл',i:['Газ/Негаз'],p:610,d:'Премиальная вода'},
     {n:'Боржоми',v:'500 мл',i:['Минеральная'],p:450,d:'Грузинская вода'}
   ]},
-  nonalc: { title:'🥤 Безалкогольные', items:[
+  nonalc: { title:' Безалкогольные', items:[
     {n:'Сок ВИЗ',v:'0,2 л',i:['Апельсин','Яблоко','Томат'],p:380,d:''},
     {n:'Фреш',v:'0,2 л',i:['Апельсин','Грейпфрут','Яблоко'],p:460,d:'Свежевыжатый'},
     {n:'Газировки',v:'0,25 л',i:['Кола','Фанта','Спрайт'],p:360,d:''},
@@ -179,7 +182,7 @@ const menu = {
     {n:'Облепиха корица',v:'500 мл',i:['Облепиха','Корица'],p:650,d:''},
     {n:'Глинтвейн б/а',v:'500 мл',i:['Виноград','Специи'],p:650,d:''}
   ]},
-  tea: { title:'🍵 Чай', items:[
+  tea: { title:' Чай', items:[
     {n:'Классический',v:'800 мл',i:['Ассам','Эрл Грей','Сенча','Улун'],p:560,d:'Молочный улун - бестселлер'},
     {n:'Полевой сбор',v:'800 мл',i:['Иван-чай','Таволга'],p:600,d:'Успокаивающий'},
     {n:'Таёжный',v:'800 мл',i:['Иван-чай','Кедр'],p:600,d:'Смолистый'},
@@ -194,7 +197,7 @@ const menu = {
     {n:'Раф',v:'350 мл',i:['Эспрессо','Сливки'],p:470,d:'',a:['Молоко']},
     {n:'Матча',v:'350 мл',i:['Матча','Молоко'],p:600,d:'',a:['Молоко']}
   ]},
-  beer: { title:'🍺 Пиво/Сидр', items:[
+  beer: { title:' Пиво/Сидр', items:[
     {n:'Peroni',v:'330 мл',i:['Италия'],p:690,d:'',a:['Глютен']},
     {n:'Corona',v:'335 мл',i:['Мексика'],p:590,d:'С лаймом',a:['Глютен']},
     {n:'Циндао',v:'330 мл',i:['Китай'],p:610,d:'',a:['Глютен']},
@@ -254,12 +257,12 @@ const menu = {
 };
 
 const navItems = [
-  {id:'water',t:'💧 Вода'},{id:'nonalc',t:'🥤 Безалко'},{id:'lemon',t:'🍋 Лимонады'},
+  {id:'water',t:'💧 Вода'},{id:'nonalc',t:' Безалко'},{id:'lemon',t:'🍋 Лимонады'},
   {id:'smooth',t:'🥛 Смузи'},{id:'vzvar',t:'☕ Взвары'},{id:'tea',t:'🍵 Чай'},
   {id:'coffee',t:'☕ Кофе'},{id:'beer',t:'🍺 Пиво'},{id:'cocktails',t:'🍸 Коктейли'},
   {id:'tinct',t:'🫙 Настойки'},{id:'niki',t:'💎 NIKI'},{id:'strong',t:'🥃 Крепкое'},
   {id:'dist',t:'🥃 Дистилляты'},{id:'allerg',t:'⚠️ Аллергены'},{id:'info',t:'📚 Знания'},
-  {id:'search',t:'🔍 Поиск'},{id:'quiz',t:'📝 Тест'}
+  {id:'search',t:' Поиск'},{id:'quiz',t:' Тест'}
 ];
 
 let current = 'water';
